@@ -54,10 +54,13 @@ Decimal phases appear between their surrounding integers in numeric order.
   2. Backend Express server runs locally with TypeScript
   3. Supabase project created with connection working from both frontend and backend
   4. Frontend and backend deploy successfully to Vercel and Render
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Scaffold frontend with Vite, React, TypeScript, Tailwind CSS v4
+- [ ] 01-02-PLAN.md — Scaffold backend with Express.js 5, TypeScript, health endpoint
+- [ ] 01-03-PLAN.md — Configure Supabase clients for frontend and backend
+- [ ] 01-04-PLAN.md — Deploy to Vercel and Render, configure CORS
 
 ### Phase 2: Authentication System
 **Goal**: Users can create accounts, log in, and stay authenticated across sessions
@@ -280,7 +283,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Setup & Infrastructure | 0/? | Not started | - |
+| 1. Project Setup & Infrastructure | 0/4 | Planned | - |
 | 2. Authentication System | 0/? | Not started | - |
 | 3. Database Schema & Services | 0/? | Not started | - |
 | 4. Supabase Storage & Media Upload | 0/? | Not started | - |
