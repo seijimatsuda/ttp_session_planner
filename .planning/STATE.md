@@ -19,19 +19,19 @@ Progress: [███░░░░░░░] 29% (2/7 plans completed)
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
+- Total plans completed: 2
 - Average duration: 6min
-- Total execution time: 0.1 hours
+- Total execution time: 0.2 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-project-setup-infrastructure | 1 | 6min | 6min |
+| 01-project-setup-infrastructure | 2 | 12min | 6min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6min)
-- Trend: Just started
+- Last 5 plans: 01-01 (6min), 01-02 (6min)
+- Trend: Consistent velocity
 
 *Updated after each plan completion*
 
@@ -48,6 +48,9 @@ Recent decisions affecting current work:
 - iOS Strategy: Backend proxy for video streaming to handle Range requests (rebuild context)
 - Tailwind CSS v4 approach: Use @import syntax, no config files needed (01-01)
 - TypeScript strict mode enabled from start for maximum type safety (01-01)
+- Express 5 for native async error handling (01-02)
+- ES modules with NodeNext resolution for modern Node.js patterns (01-02)
+- Separated app.ts and server.ts for testability and modularity (01-02)
 
 ### Pending Todos
 
@@ -59,6 +62,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-22
-Stopped at: Completed 01-01-PLAN.md (Frontend Scaffold)
+Last session: 2026-01-23
+Stopped at: Completed 01-02-PLAN.md (Backend Express Server)
 Resume file: None
