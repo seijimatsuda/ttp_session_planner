@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
+import { supabaseAdmin } from './config/supabase.js'
 
 const app = express()
 
@@ -27,9 +28,31 @@ app.get('/', (req: Request, res: Response) => {
     message: 'Soccer Session Planner API',
     version: '1.0.0',
     endpoints: {
-      health: '/health'
+      health: '/health',
+      testDb: '/api/test-db'
     }
   })
+})
+
+// Test Supabase connection endpoint
+app.get('/api/test-db', async (req: Request, res: Response) => {
+  try {
+    const { error } = await supabaseAdmin.from('_test').select('*').limit(1)
+    // PGRST205 = table not found (expected for test), PGRST116 = no rows (also OK)
+    if (error && error.code !== 'PGRST205' && error.code !== 'PGRST116' && error.code !== '42P01') {
+      throw error
+    }
+    res.json({
+      status: 'connected',
+      message: 'Supabase connection successful'
+    })
+  } catch (err) {
+    console.error('Supabase test error:', err)
+    res.status(500).json({
+      status: 'error',
+      message: err instanceof Error ? err.message : 'Unknown error'
+    })
+  }
 })
 
 // Error handling middleware - Express 5 supports async errors natively
