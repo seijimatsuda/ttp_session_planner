@@ -4,21 +4,36 @@ import { supabaseAdmin } from './config/supabase.js'
 
 const app = express()
 
-// CORS configuration - will be updated with actual frontend URL in production
+// CORS configuration - handles both local and production
+const allowedOrigins = [
+  process.env.FRONTEND_URL || 'http://localhost:5173',
+].filter(Boolean)
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or Postman)
+    if (!origin) return callback(null, true)
+
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      console.warn(`CORS blocked origin: ${origin}`)
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true
 }))
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// Health check endpoint
+// Health check endpoint (Render uses this)
 app.get('/health', (req: Request, res: Response) => {
   res.json({
     status: 'ok',
     timestamp: new Date().toISOString(),
-    service: 'soccer-session-planner-api'
+    service: 'soccer-session-planner-api',
+    environment: process.env.NODE_ENV || 'development'
   })
 })
 
@@ -34,12 +49,11 @@ app.get('/', (req: Request, res: Response) => {
   })
 })
 
-// Test Supabase connection endpoint
+// Database connection test
 app.get('/api/test-db', async (req: Request, res: Response) => {
   try {
     const { error } = await supabaseAdmin.from('_test').select('*').limit(1)
-    // PGRST205 = table not found (expected for test), PGRST116 = no rows (also OK)
-    if (error && error.code !== 'PGRST205' && error.code !== 'PGRST116' && error.code !== '42P01') {
+    if (error && error.code !== '42P01' && error.code !== 'PGRST116') {
       throw error
     }
     res.json({
@@ -47,7 +61,6 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
       message: 'Supabase connection successful'
     })
   } catch (err) {
-    console.error('Supabase test error:', err)
     res.status(500).json({
       status: 'error',
       message: err instanceof Error ? err.message : 'Unknown error'
@@ -55,7 +68,7 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
   }
 })
 
-// Error handling middleware - Express 5 supports async errors natively
+// Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack)
   res.status(500).json({ error: 'Something went wrong!' })
