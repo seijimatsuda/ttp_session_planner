@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 4 of 16 (Supabase Storage & Media Upload)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-27 — Completed 04-01-PLAN.md (Storage Bucket & Service)
+Last activity: 2026-01-27 — Completed 04-02-PLAN.md (Upload Hook)
 
-Progress: [██░░░░░░░░] 23% (3/16 phases completed, 11/48 plans completed)
+Progress: [██░░░░░░░░] 25% (3/16 phases completed, 12/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 4.5min
-- Total execution time: 0.83 hours
+- Total plans completed: 12
+- Average duration: 4.3min
+- Total execution time: 0.87 hours
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [██░░░░░░░░] 23% (3/16 phases completed, 11/48 pla
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
 | 02-authentication-system | 3 | 6min | 2min |
 | 03-database-schema-services | 3 | 13min | 4.3min |
-| 04-supabase-storage-media-upload | 1 | 2min | 2min |
+| 04-supabase-storage-media-upload | 2 | 4min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 03-01 (3min), 03-02 (4min), 03-03 (6min), 04-01 (2min)
+- Last 5 plans: 03-02 (4min), 03-03 (6min), 04-01 (2min), 04-02 (2min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -78,6 +78,9 @@ Recent decisions affecting current work:
 - Private storage bucket with signed URLs for secure media access (04-01)
 - owner_id for SELECT/DELETE, foldername for INSERT in storage RLS (04-01)
 - TypeScript constants mirror SQL migration arrays for single source of truth (04-01)
+- TUS endpoint URL constructed from VITE_SUPABASE_URL project ID extraction (04-02)
+- 6MB chunk size for Supabase TUS compatibility standard (04-02)
+- Upload ref pattern for abort capability during in-progress uploads (04-02)
 
 ### Pending Todos
 
@@ -90,7 +93,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 04-01-PLAN.md (Storage Bucket & Service)
+Stopped at: Completed 04-02-PLAN.md (Upload Hook)
 Resume file: None
 
 ## Production URLs
