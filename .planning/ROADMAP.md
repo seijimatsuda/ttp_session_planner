@@ -72,10 +72,12 @@ Plans:
   3. User session persists across browser refreshes
   4. Unauthenticated users redirected to login when accessing protected routes
   5. User can log out from any page
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: TBD
+- [ ] 02-01-PLAN.md — Set up AuthContext with session management and React Router v6
+- [ ] 02-02-PLAN.md — Create LoginPage, SignupPage, and ProtectedRoute components
+- [ ] 02-03-PLAN.md — Wire routes, add LogoutButton, verify end-to-end auth flow
 
 ### Phase 3: Database Schema & Services
 **Goal**: Database tables exist with RLS policies and TypeScript-safe query hooks
@@ -86,10 +88,12 @@ Plans:
   2. Sessions table exists with RLS preventing cross-user data access
   3. TypeScript types accurately match database schema
   4. React Query hooks available for data fetching with type safety
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md — Create drills and sessions tables with RLS policies in Supabase
+- [ ] 03-02-PLAN.md — Create TypeScript types, service layer, and QueryProvider
+- [ ] 03-03-PLAN.md — Create React Query hooks for drills and sessions
 
 ### Phase 4: Supabase Storage & Media Upload
 **Goal**: Users can upload drill videos and images with progress tracking
@@ -100,10 +104,12 @@ Plans:
   2. User can upload images (JPG, PNG, GIF, WebP)
   3. Upload UI shows real-time progress indicator
   4. User can delete uploaded media files
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — Create storage bucket, RLS policies, TypeScript types, and storage service
+- [ ] 04-02-PLAN.md — Install tus-js-client and create useMediaUpload hook with progress tracking
+- [ ] 04-03-PLAN.md — Create MediaUpload component with progress UI and delete functionality
 
 ### Phase 5: iOS Media Proxy (Critical)
 **Goal**: Videos play reliably on iOS Safari with scrubbing support
@@ -114,10 +120,11 @@ Plans:
   2. Video scrubbing works on iOS (seeking to arbitrary timestamps)
   3. Backend proxy handles HTTP Range requests correctly
   4. Video URLs routed through backend proxy transparently
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: TBD
+- [ ] 05-01-PLAN.md — Implement media proxy route with Range request handling and CORS headers
+- [ ] 05-02-PLAN.md — Create frontend proxy URL utility and verify iOS Safari playback
 
 ### Phase 6: Core UI Components
 **Goal**: Reusable component library with responsive layout system
@@ -129,10 +136,13 @@ Plans:
   3. Loading states show skeleton placeholders instead of blank screens
   4. Toast notifications appear for success and error feedback
   5. Error messages use user-friendly language
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 06-01: TBD
+- [ ] 06-01-PLAN.md — Install UI libraries, create cn() utility, setup toast and error boundary
+- [ ] 06-02-PLAN.md — Create Button, Input, and Skeleton UI primitive components
+- [ ] 06-03-PLAN.md — Create AppShell responsive layout and Container components
+- [ ] 06-04-PLAN.md — Wire providers into App.tsx, create demo page, verify responsive behavior
 
 ### Phase 7: Add Drill Feature
 **Goal**: Users can create new drills with complete metadata and media
@@ -284,11 +294,11 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Setup & Infrastructure | 0/4 | Planned | - |
-| 2. Authentication System | 0/? | Not started | - |
-| 3. Database Schema & Services | 0/? | Not started | - |
-| 4. Supabase Storage & Media Upload | 0/? | Not started | - |
-| 5. iOS Media Proxy | 0/? | Not started | - |
-| 6. Core UI Components | 0/? | Not started | - |
+| 2. Authentication System | 0/3 | Planned | - |
+| 3. Database Schema & Services | 0/3 | Planned | - |
+| 4. Supabase Storage & Media Upload | 0/3 | Planned | - |
+| 5. iOS Media Proxy | 0/2 | Planned | - |
+| 6. Core UI Components | 0/4 | Planned | - |
 | 7. Add Drill Feature | 0/? | Not started | - |
 | 8. Drill Library | 0/? | Not started | - |
 | 9. Drill Detail & Edit | 0/? | Not started | - |
