@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 3 - Database Schema & Services
+**Current focus:** Phase 3 - Database Schema & Services (COMPLETE)
 
 ## Current Position
 
 Phase: 3 of 16 (Database Schema & Services)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-01-26 — Completed 03-02-PLAN.md (Database Types & Service Layer)
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-01-26 — Completed 03-03-PLAN.md (React Query Hooks)
 
-Progress: [██░░░░░░░░] 19% (2/16 phases completed, 9/48 plans completed)
+Progress: [██░░░░░░░░] 21% (3/16 phases completed, 10/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 10
 - Average duration: 5min
-- Total execution time: 0.7 hours
+- Total execution time: 0.8 hours
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [██░░░░░░░░] 19% (2/16 phases completed, 9/48 plan
 |-------|-------|-------|----------|
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
 | 02-authentication-system | 3 | 6min | 2min |
-| 03-database-schema-services | 2 | 7min | 3.5min |
+| 03-database-schema-services | 3 | 13min | 4.3min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (2min), 02-03 (2min), 03-01 (3min), 03-02 (4min)
+- Last 5 plans: 02-03 (2min), 03-01 (3min), 03-02 (4min), 03-03 (6min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -70,6 +70,10 @@ Recent decisions affecting current work:
 - All service functions throw errors for React Query error handling (03-02)
 - QueryClient configured with 1-minute stale time and single retry (03-02)
 - QueryProvider wraps AuthProvider in component hierarchy (03-02)
+- Query key factories exported for external cache manipulation (03-03)
+- Mutations invalidate user-scoped list queries on success (03-03)
+- Delete mutations invalidate all lists (userId unavailable in onSuccess) (03-03)
+- Hooks use enabled flag for conditional fetching (03-03)
 
 ### Pending Todos
 
@@ -82,7 +86,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-26
-Stopped at: Completed 03-02-PLAN.md (Database Types & Service Layer)
+Stopped at: Completed 03-03-PLAN.md (React Query Hooks) - Phase 3 complete
 Resume file: None
 
 ## Production URLs
