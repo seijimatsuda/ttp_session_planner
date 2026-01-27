@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 3 - Database Schema & Services (COMPLETE)
+**Current focus:** Phase 4 - Supabase Storage & Media Upload
 
 ## Current Position
 
-Phase: 3 of 16 (Database Schema & Services)
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-01-26 — Completed 03-03-PLAN.md (React Query Hooks)
+Phase: 4 of 16 (Supabase Storage & Media Upload)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-27 — Completed 04-01-PLAN.md (Storage Bucket & Service)
 
-Progress: [██░░░░░░░░] 21% (3/16 phases completed, 10/48 plans completed)
+Progress: [██░░░░░░░░] 23% (3/16 phases completed, 11/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: 5min
-- Total execution time: 0.8 hours
+- Total plans completed: 11
+- Average duration: 4.5min
+- Total execution time: 0.83 hours
 
 **By Phase:**
 
@@ -30,9 +30,10 @@ Progress: [██░░░░░░░░] 21% (3/16 phases completed, 10/48 pla
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
 | 02-authentication-system | 3 | 6min | 2min |
 | 03-database-schema-services | 3 | 13min | 4.3min |
+| 04-supabase-storage-media-upload | 1 | 2min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 02-03 (2min), 03-01 (3min), 03-02 (4min), 03-03 (6min)
+- Last 5 plans: 03-01 (3min), 03-02 (4min), 03-03 (6min), 04-01 (2min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - Mutations invalidate user-scoped list queries on success (03-03)
 - Delete mutations invalidate all lists (userId unavailable in onSuccess) (03-03)
 - Hooks use enabled flag for conditional fetching (03-03)
+- Private storage bucket with signed URLs for secure media access (04-01)
+- owner_id for SELECT/DELETE, foldername for INSERT in storage RLS (04-01)
+- TypeScript constants mirror SQL migration arrays for single source of truth (04-01)
 
 ### Pending Todos
 
@@ -81,12 +85,12 @@ None yet.
 
 ### Blockers/Concerns
 
-None yet.
+- Migration 001_storage_bucket.sql needs to be applied to Supabase before upload functionality can be tested
 
 ## Session Continuity
 
-Last session: 2026-01-26
-Stopped at: Completed 03-03-PLAN.md (React Query Hooks) - Phase 3 complete
+Last session: 2026-01-27
+Stopped at: Completed 04-01-PLAN.md (Storage Bucket & Service)
 Resume file: None
 
 ## Production URLs
