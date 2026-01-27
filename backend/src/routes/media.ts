@@ -64,13 +64,14 @@ function isValidRange(
 
 /**
  * Media proxy route handler
- * GET /:bucket/* - Streams media files from Supabase Storage with Range request support
+ * GET /:bucket/*path - Streams media files from Supabase Storage with Range request support
+ * Express 5 requires named wildcard parameters (path-to-regexp v8 syntax)
  */
-mediaRouter.get('/:bucket/*', async (req: Request, res: Response) => {
+mediaRouter.get('/:bucket/*path', async (req: Request, res: Response) => {
   try {
     // Extract and normalize params - Express types can be string | string[]
     const bucketParam = req.params.bucket
-    const pathParam = req.params[0]
+    const pathParam = req.params.path
     const bucket = Array.isArray(bucketParam) ? bucketParam[0] : bucketParam
     const path = Array.isArray(pathParam) ? pathParam[0] : pathParam
 
