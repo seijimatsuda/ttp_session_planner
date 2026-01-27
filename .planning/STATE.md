@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 5 - iOS Media Proxy
+**Current focus:** Phase 5 complete - Ready for Phase 6
 
 ## Current Position
 
 Phase: 5 of 16 (iOS Media Proxy)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-01-27 — Completed 05-01-PLAN.md (Media Proxy Route)
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-01-27 — Completed 05-02-PLAN.md (Frontend Proxy Integration)
 
-Progress: [███░░░░░░░] 33% (4/16 phases completed, 16/48 plans completed)
+Progress: [████░░░░░░] 35% (5/16 phases completed, 18/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 16
-- Average duration: 4.0min
-- Total execution time: 1.07 hours
+- Total plans completed: 18
+- Average duration: 3.8min
+- Total execution time: 1.15 hours
 
 **By Phase:**
 
@@ -31,10 +31,10 @@ Progress: [███░░░░░░░] 33% (4/16 phases completed, 16/48 pla
 | 02-authentication-system | 3 | 6min | 2min |
 | 03-database-schema-services | 3 | 13min | 4.3min |
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
-| 05-ios-media-proxy | 1 | 3min | 3min |
+| 05-ios-media-proxy | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (2min), 04-02 (2min), 04-03 (5min), 05-01 (3min)
+- Last 5 plans: 04-02 (2min), 04-03 (5min), 05-01 (3min), 05-02 (2min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -89,6 +89,7 @@ Recent decisions affecting current work:
 - 1MB chunk size for video streaming with stream.pipeline() for safe error handling (05-01)
 - 1 hour signed URL expiry for long videos and paused playback (05-01)
 - CORS exposedHeaders for media endpoints: Content-Range, Accept-Ranges, Content-Length (05-01)
+- getProxyMediaUrl validates file extension with console.warn for Safari debugging (05-02)
 
 ### Pending Todos
 
@@ -101,7 +102,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 05-01-PLAN.md (Media Proxy Route)
+Stopped at: Completed 05-02-PLAN.md (Frontend Proxy Integration)
 Resume file: None
 
 ## Production URLs
