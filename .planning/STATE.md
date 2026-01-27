@@ -12,16 +12,16 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 Phase: 6 of 16 (Core UI Components)
 Plan: 3 of 4 in current phase
 Status: In progress
-Last activity: 2026-01-27 — Completed 06-03-PLAN.md (Layout Components)
+Last activity: 2026-01-27 — Completed 06-02-PLAN.md (Core UI Primitives)
 
-Progress: [████░░░░░░] 40% (5/16 phases completed, 20/48 plans completed)
+Progress: [████░░░░░░] 42% (5/16 phases completed, 21/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 20
-- Average duration: 3.6min
-- Total execution time: 1.21 hours
+- Total plans completed: 21
+- Average duration: 3.7min
+- Total execution time: 1.31 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: [████░░░░░░] 40% (5/16 phases completed, 20/48 pla
 | 03-database-schema-services | 3 | 13min | 4.3min |
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
 | 05-ios-media-proxy | 2 | 5min | 2.5min |
-| 06-core-ui-components | 2 | 5min | 2.5min |
+| 06-core-ui-components | 3 | 11min | 3.7min |
 
 **Recent Trend:**
-- Last 5 plans: 05-01 (3min), 05-02 (2min), 06-01 (3min), 06-03 (2min)
-- Trend: Fast execution on straightforward implementation plans
+- Last 5 plans: 05-02 (2min), 06-01 (3min), 06-03 (2min), 06-02 (6min)
+- Trend: 06-02 took longer due to auto-fixing pre-existing TypeScript build errors
 
 *Updated after each plan completion*
 
@@ -97,6 +97,10 @@ Recent decisions affecting current work:
 - min-h-11 min-w-11 for 44px touch targets on mobile menu buttons (06-03)
 - Body scroll lock when mobile sidebar open for UX (06-03)
 - Polymorphic 'as' prop on Container for semantic HTML flexibility (06-03)
+- 44px (min-h-11) touch targets on ALL Button and Input elements for iOS/iPad accessibility (06-02)
+- forwardRef pattern for ref forwarding on primitive components (06-02)
+- Barrel exports from components/ui/index.ts for clean imports (06-02)
+- @/* path alias configured in tsconfig.app.json and vite.config.ts (06-02)
 
 ### Pending Todos
 
@@ -109,7 +113,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 06-03-PLAN.md (Layout Components)
+Stopped at: Completed 06-02-PLAN.md (Core UI Primitives)
 Resume file: None
 
 ## Production URLs
