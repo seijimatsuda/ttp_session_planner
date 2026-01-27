@@ -17,10 +17,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Database & Services
 
-- [ ] **DATA-01**: Drills table with RLS (users access own data only)
-- [ ] **DATA-02**: Sessions table with RLS (users access own data only)
-- [ ] **DATA-03**: TypeScript types match database schema
-- [ ] **DATA-04**: React Query hooks for data fetching
+- [x] **DATA-01**: Drills table with RLS (users access own data only)
+- [x] **DATA-02**: Sessions table with RLS (users access own data only)
+- [x] **DATA-03**: TypeScript types match database schema
+- [x] **DATA-04**: React Query hooks for data fetching
 
 ### Media & Storage
 
@@ -114,10 +114,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-03 | Phase 2 | Complete |
 | AUTH-04 | Phase 2 | Complete |
 | AUTH-05 | Phase 2 | Complete |
-| DATA-01 | Phase 3 | Pending |
-| DATA-02 | Phase 3 | Pending |
-| DATA-03 | Phase 3 | Pending |
-| DATA-04 | Phase 3 | Pending |
+| DATA-01 | Phase 3 | Complete |
+| DATA-02 | Phase 3 | Complete |
+| DATA-03 | Phase 3 | Complete |
+| DATA-04 | Phase 3 | Complete |
 | MEDIA-01 | Phase 4 | Pending |
 | MEDIA-02 | Phase 4 | Pending |
 | MEDIA-03 | Phase 4 | Pending |

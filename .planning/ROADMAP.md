@@ -22,7 +22,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Setup & Infrastructure** - Initialize project scaffolding and deployment
 - [x] **Phase 2: Authentication System** - User signup, login, session management
-- [ ] **Phase 3: Database Schema & Services** - PostgreSQL tables, RLS, TypeScript types
+- [x] **Phase 3: Database Schema & Services** - PostgreSQL tables, RLS, TypeScript types
 - [ ] **Phase 4: Supabase Storage & Media Upload** - Upload videos/images with progress tracking
 - [ ] **Phase 5: iOS Media Proxy** - Backend proxy for Range requests and iOS compatibility
 - [ ] **Phase 6: Core UI Components** - Reusable components and responsive layout
@@ -91,9 +91,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Create drills and sessions tables with RLS policies in Supabase
-- [ ] 03-02-PLAN.md — Create TypeScript types, service layer, and QueryProvider
-- [ ] 03-03-PLAN.md — Create React Query hooks for drills and sessions
+- [x] 03-01-PLAN.md — Create drills and sessions tables with RLS policies in Supabase
+- [x] 03-02-PLAN.md — Create TypeScript types, service layer, and QueryProvider
+- [x] 03-03-PLAN.md — Create React Query hooks for drills and sessions
 
 ### Phase 4: Supabase Storage & Media Upload
 **Goal**: Users can upload drill videos and images with progress tracking
@@ -297,7 +297,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 |-------|----------------|--------|-----------|
 | 1. Project Setup & Infrastructure | 4/4 | ✓ Complete | 2026-01-27 |
 | 2. Authentication System | 3/3 | ✓ Complete | 2026-01-27 |
-| 3. Database Schema & Services | 0/3 | Planned | - |
+| 3. Database Schema & Services | 3/3 | ✓ Complete | 2026-01-27 |
 | 4. Supabase Storage & Media Upload | 0/3 | Planned | - |
 | 5. iOS Media Proxy | 0/2 | Planned | - |
 | 6. Core UI Components | 0/4 | Planned | - |
