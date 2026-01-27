@@ -6,7 +6,7 @@
  */
 
 import type { SupabaseClient } from '@supabase/supabase-js'
-import type { Database, DrillInsert, DrillUpdate } from '../lib/database.types'
+import type { Database, DrillCategory, DrillInsert, DrillUpdate } from '../lib/database.types'
 
 type Client = SupabaseClient<Database>
 
@@ -44,7 +44,7 @@ export async function getDrillById(client: Client, id: string) {
 export async function getDrillsByCategory(
   client: Client,
   userId: string,
-  category: string
+  category: DrillCategory
 ) {
   const { data, error } = await client
     .from('drills')
