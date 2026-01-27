@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import { supabaseAdmin } from './config/supabase.js'
+import { mediaRouter } from './routes/media.js'
 
 const app = express()
 
@@ -9,6 +10,25 @@ const allowedOrigins = [
   process.env.FRONTEND_URL || 'http://localhost:5173',
 ].filter(Boolean)
 
+// Media-specific CORS with Range headers exposed for iOS Safari video streaming
+app.use('/api/media', cors({
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true)
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      console.warn(`CORS blocked origin: ${origin}`)
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
+  credentials: true,
+  exposedHeaders: ['Content-Range', 'Accept-Ranges', 'Content-Length']
+}))
+
+// Mount media router after its CORS middleware
+app.use('/api/media', mediaRouter)
+
+// General CORS for other routes
 app.use(cors({
   origin: (origin, callback) => {
     // Allow requests with no origin (like mobile apps or Postman)
@@ -44,7 +64,8 @@ app.get('/', (req: Request, res: Response) => {
     version: '1.0.0',
     endpoints: {
       health: '/health',
-      testDb: '/api/test-db'
+      testDb: '/api/test-db',
+      media: '/api/media/:bucket/:path'
     }
   })
 })
