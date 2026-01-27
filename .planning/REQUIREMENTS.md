@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication
 
-- [ ] **AUTH-01**: User can sign up with email/password
-- [ ] **AUTH-02**: User can log in with email/password
-- [ ] **AUTH-03**: User session persists across browser refreshes
-- [ ] **AUTH-04**: Protected routes redirect unauthenticated users to login
-- [ ] **AUTH-05**: User can log out from any page
+- [x] **AUTH-01**: User can sign up with email/password
+- [x] **AUTH-02**: User can log in with email/password
+- [x] **AUTH-03**: User session persists across browser refreshes
+- [x] **AUTH-04**: Protected routes redirect unauthenticated users to login
+- [x] **AUTH-05**: User can log out from any page
 
 ### Database & Services
 
@@ -109,11 +109,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 2 | Pending |
-| AUTH-02 | Phase 2 | Pending |
-| AUTH-03 | Phase 2 | Pending |
-| AUTH-04 | Phase 2 | Pending |
-| AUTH-05 | Phase 2 | Pending |
+| AUTH-01 | Phase 2 | Complete |
+| AUTH-02 | Phase 2 | Complete |
+| AUTH-03 | Phase 2 | Complete |
+| AUTH-04 | Phase 2 | Complete |
+| AUTH-05 | Phase 2 | Complete |
 | DATA-01 | Phase 3 | Pending |
 | DATA-02 | Phase 3 | Pending |
 | DATA-03 | Phase 3 | Pending |

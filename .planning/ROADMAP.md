@@ -21,7 +21,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 ### Milestone 1: Foundation (MVP)
 
 - [x] **Phase 1: Project Setup & Infrastructure** - Initialize project scaffolding and deployment
-- [ ] **Phase 2: Authentication System** - User signup, login, session management
+- [x] **Phase 2: Authentication System** - User signup, login, session management
 - [ ] **Phase 3: Database Schema & Services** - PostgreSQL tables, RLS, TypeScript types
 - [ ] **Phase 4: Supabase Storage & Media Upload** - Upload videos/images with progress tracking
 - [ ] **Phase 5: iOS Media Proxy** - Backend proxy for Range requests and iOS compatibility
@@ -75,9 +75,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Set up AuthContext with session management and React Router v6
-- [ ] 02-02-PLAN.md — Create LoginPage, SignupPage, and ProtectedRoute components
-- [ ] 02-03-PLAN.md — Wire routes, add LogoutButton, verify end-to-end auth flow
+- [x] 02-01-PLAN.md — Set up AuthContext with session management and React Router v6
+- [x] 02-02-PLAN.md — Create LoginPage, SignupPage, and ProtectedRoute components
+- [x] 02-03-PLAN.md — Wire routes, add LogoutButton, verify end-to-end auth flow
 
 ### Phase 3: Database Schema & Services
 **Goal**: Database tables exist with RLS policies and TypeScript-safe query hooks
@@ -153,10 +153,12 @@ Plans:
   2. User can attach video or image during drill creation
   3. User can add optional metadata (num_players, equipment, tags, reference URL)
   4. Created drill appears immediately in user's drill library
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: TBD
+- [ ] 07-01-PLAN.md — Create Zod schema, types, defaults, and TagInput component
+- [ ] 07-02-PLAN.md — Create DrillForm with MediaUpload integration and AddDrillPage with routing
+- [ ] 07-03-PLAN.md — Verify complete drill creation flow end-to-end
 
 ### Phase 8: Drill Library
 **Goal**: Users can browse, search, and filter their drill collection
@@ -294,12 +296,12 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Setup & Infrastructure | 4/4 | ✓ Complete | 2026-01-27 |
-| 2. Authentication System | 0/3 | Planned | - |
+| 2. Authentication System | 3/3 | ✓ Complete | 2026-01-27 |
 | 3. Database Schema & Services | 0/3 | Planned | - |
 | 4. Supabase Storage & Media Upload | 0/3 | Planned | - |
 | 5. iOS Media Proxy | 0/2 | Planned | - |
 | 6. Core UI Components | 0/4 | Planned | - |
-| 7. Add Drill Feature | 0/? | Not started | - |
+| 7. Add Drill Feature | 0/3 | Planned | - |
 | 8. Drill Library | 0/? | Not started | - |
 | 9. Drill Detail & Edit | 0/? | Not started | - |
 | 10. Session Planner Grid | 0/? | Not started | - |
