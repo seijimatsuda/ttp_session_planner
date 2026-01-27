@@ -5,33 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 1 - Project Setup & Infrastructure
+**Current focus:** Phase 2 - Authentication System
 
 ## Current Position
 
-Phase: 1 of 16 (Project Setup & Infrastructure)
-Plan: 3 of 4 in current phase
-Status: In progress
-Last activity: 2026-01-23 — Completed 01-03-PLAN.md (Supabase Integration)
+Phase: 2 of 16 (Authentication System)
+Plan: 0 of 3 in current phase
+Status: Ready to plan
+Last activity: 2026-01-27 — Phase 1 complete, deployed to production
 
-Progress: [████░░░░░░] 43% (3/7 plans completed)
+Progress: [██░░░░░░░░] 6% (1/16 phases completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 7min
-- Total execution time: 0.4 hours
+- Total execution time: 0.5 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-project-setup-infrastructure | 3 | 21min | 7min |
+| 01-project-setup-infrastructure | 4 | 28min | 7min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6min), 01-02 (6min), 01-03 (9min)
-- Trend: Stable velocity with slight increase for integration work
+- Last 5 plans: 01-01 (6min), 01-02 (6min), 01-03 (9min), 01-04 (7min)
+- Trend: Stable velocity, checkpoint plans handled smoothly
 
 *Updated after each plan completion*
 
@@ -64,6 +64,12 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-23
-Stopped at: Completed 01-03-PLAN.md (Supabase Integration)
+Last session: 2026-01-27
+Stopped at: Phase 1 complete, ready for Phase 2 (Authentication System)
 Resume file: None
+
+## Production URLs
+
+- Frontend: https://ttp-session-planner.vercel.app
+- Backend: https://ttp-session-planner.onrender.com
+- Supabase: https://cvzffawyjrgubhkzuwkd.supabase.co

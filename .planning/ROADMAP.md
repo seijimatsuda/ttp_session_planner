@@ -20,7 +20,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### Milestone 1: Foundation (MVP)
 
-- [ ] **Phase 1: Project Setup & Infrastructure** - Initialize project scaffolding and deployment
+- [x] **Phase 1: Project Setup & Infrastructure** - Initialize project scaffolding and deployment
 - [ ] **Phase 2: Authentication System** - User signup, login, session management
 - [ ] **Phase 3: Database Schema & Services** - PostgreSQL tables, RLS, TypeScript types
 - [ ] **Phase 4: Supabase Storage & Media Upload** - Upload videos/images with progress tracking
@@ -57,10 +57,10 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 4 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold frontend with Vite, React, TypeScript, Tailwind CSS v4
-- [ ] 01-02-PLAN.md — Scaffold backend with Express.js 5, TypeScript, health endpoint
-- [ ] 01-03-PLAN.md — Configure Supabase clients for frontend and backend
-- [ ] 01-04-PLAN.md — Deploy to Vercel and Render, configure CORS
+- [x] 01-01-PLAN.md — Scaffold frontend with Vite, React, TypeScript, Tailwind CSS v4
+- [x] 01-02-PLAN.md — Scaffold backend with Express.js 5, TypeScript, health endpoint
+- [x] 01-03-PLAN.md — Configure Supabase clients for frontend and backend
+- [x] 01-04-PLAN.md — Deploy to Vercel and Render, configure CORS
 
 ### Phase 2: Authentication System
 **Goal**: Users can create accounts, log in, and stay authenticated across sessions
@@ -293,7 +293,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Setup & Infrastructure | 0/4 | Planned | - |
+| 1. Project Setup & Infrastructure | 4/4 | ✓ Complete | 2026-01-27 |
 | 2. Authentication System | 0/3 | Planned | - |
 | 3. Database Schema & Services | 0/3 | Planned | - |
 | 4. Supabase Storage & Media Upload | 0/3 | Planned | - |
