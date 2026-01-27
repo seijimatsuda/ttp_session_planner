@@ -27,8 +27,8 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **MEDIA-01**: User can upload drill videos (MP4, MOV, M4V, WebM up to 100MB)
 - [x] **MEDIA-02**: User can upload drill images (JPG, PNG, GIF, WebP)
 - [x] **MEDIA-03**: Upload shows progress indicator
-- [ ] **MEDIA-04**: Videos play on iOS Safari via backend proxy
-- [ ] **MEDIA-05**: Video scrubbing works on iOS (Range request support)
+- [x] **MEDIA-04**: Videos play on iOS Safari via backend proxy
+- [x] **MEDIA-05**: Video scrubbing works on iOS (Range request support)
 - [x] **MEDIA-06**: User can delete uploaded media
 
 ### Drills
@@ -121,8 +121,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MEDIA-01 | Phase 4 | Complete |
 | MEDIA-02 | Phase 4 | Complete |
 | MEDIA-03 | Phase 4 | Complete |
-| MEDIA-04 | Phase 5 | Pending |
-| MEDIA-05 | Phase 5 | Pending |
+| MEDIA-04 | Phase 5 | Complete |
+| MEDIA-05 | Phase 5 | Complete |
 | MEDIA-06 | Phase 4 | Complete |
 | DRILL-01 | Phase 7 | Pending |
 | DRILL-02 | Phase 7 | Pending |

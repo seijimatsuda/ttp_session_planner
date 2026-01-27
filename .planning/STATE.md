@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 5 complete - Ready for Phase 6
+**Current focus:** Phase 6 - Core UI Components
 
 ## Current Position
 
-Phase: 5 of 16 (iOS Media Proxy)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-01-27 — Completed 05-02-PLAN.md (Frontend Proxy Integration)
+Phase: 6 of 16 (Core UI Components)
+Plan: 0 of 4 in current phase
+Status: Ready to start
+Last activity: 2026-01-27 — Completed Phase 5 (iOS Media Proxy)
 
-Progress: [████░░░░░░] 35% (5/16 phases completed, 18/48 plans completed)
+Progress: [████░░░░░░] 31% (5/16 phases completed, 17/48 plans completed)
 
 ## Performance Metrics
 
