@@ -10,17 +10,17 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 2 of 16 (Authentication System)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-27 — Completed 02-01-PLAN.md (Auth Foundation)
+Last activity: 2026-01-27 — Completed 02-02-PLAN.md (Authentication UI Components)
 
-Progress: [██░░░░░░░░] 6% (1/16 phases completed, 5/48 plans completed)
+Progress: [██░░░░░░░░] 13% (1/16 phases completed, 6/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 6min
+- Total plans completed: 6
+- Average duration: 5min
 - Total execution time: 0.5 hours
 
 **By Phase:**
@@ -28,10 +28,10 @@ Progress: [██░░░░░░░░] 6% (1/16 phases completed, 5/48 plans
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
-| 02-authentication-system | 1 | 2min | 2min |
+| 02-authentication-system | 2 | 4min | 2min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (6min), 01-03 (9min), 01-04 (7min), 02-01 (2min)
+- Last 5 plans: 01-03 (9min), 01-04 (7min), 02-01 (2min), 02-02 (2min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -57,6 +57,10 @@ Recent decisions affecting current work:
 - Synchronous onAuthStateChange callback to avoid Supabase client deadlocks (02-01)
 - isLoading state starts true to prevent flash of unauthenticated content (02-01)
 - AuthProvider wraps entire app for global auth state access via useAuth hook (02-01)
+- ProtectedRoute uses Outlet pattern for React Router v6 nested routes (02-02)
+- LoginPage preserves intended destination via location.state.from (02-02)
+- SignupPage handles both email confirmation enabled/disabled flows (02-02)
+- All auth forms use controlled components with React useState (02-02)
 
 ### Pending Todos
 
@@ -68,8 +72,8 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-01-27T01:18:46Z
-Stopped at: Completed 02-01-PLAN.md (Auth Foundation)
+Last session: 2026-01-27T01:22:42Z
+Stopped at: Completed 02-02-PLAN.md (Authentication UI Components)
 Resume file: None
 
 ## Production URLs
