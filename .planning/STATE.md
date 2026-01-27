@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 4 - Supabase Storage & Media Upload
+**Current focus:** Phase 5 - iOS Media Proxy
 
 ## Current Position
 
-Phase: 4 of 16 (Supabase Storage & Media Upload)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-01-27 — Completed 04-02-PLAN.md (Upload Hook)
+Phase: 5 of 16 (iOS Media Proxy)
+Plan: 0 of 2 in current phase
+Status: Ready to start
+Last activity: 2026-01-27 — Completed Phase 4 (Supabase Storage & Media Upload)
 
-Progress: [██░░░░░░░░] 25% (3/16 phases completed, 12/48 plans completed)
+Progress: [██░░░░░░░░] 25% (4/16 phases completed, 15/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: 4.3min
-- Total execution time: 0.87 hours
+- Total plans completed: 15
+- Average duration: 4.1min
+- Total execution time: 1.02 hours
 
 **By Phase:**
 
@@ -30,10 +30,10 @@ Progress: [██░░░░░░░░] 25% (3/16 phases completed, 12/48 pla
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
 | 02-authentication-system | 3 | 6min | 2min |
 | 03-database-schema-services | 3 | 13min | 4.3min |
-| 04-supabase-storage-media-upload | 2 | 4min | 2min |
+| 04-supabase-storage-media-upload | 3 | 9min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 03-02 (4min), 03-03 (6min), 04-01 (2min), 04-02 (2min)
+- Last 5 plans: 03-03 (6min), 04-01 (2min), 04-02 (2min), 04-03 (5min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -81,6 +81,9 @@ Recent decisions affecting current work:
 - TUS endpoint URL constructed from VITE_SUPABASE_URL project ID extraction (04-02)
 - 6MB chunk size for Supabase TUS compatibility standard (04-02)
 - Upload ref pattern for abort capability during in-progress uploads (04-02)
+- Bucket created via Dashboard UI due to SQL migration permission limitations (04-03)
+- Shared viewing RLS: All authenticated users can view files, only owner can INSERT/DELETE (04-03)
+- playsInline attribute on video elements for iOS compatibility (04-03)
 
 ### Pending Todos
 
@@ -88,12 +91,12 @@ None yet.
 
 ### Blockers/Concerns
 
-- Migration 001_storage_bucket.sql needs to be applied to Supabase before upload functionality can be tested
+None currently.
 
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 04-02-PLAN.md (Upload Hook)
+Stopped at: Completed Phase 4 (Supabase Storage & Media Upload)
 Resume file: None
 
 ## Production URLs

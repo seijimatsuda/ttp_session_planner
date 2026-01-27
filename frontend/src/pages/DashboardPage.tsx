@@ -1,5 +1,6 @@
 import { useAuth } from '../contexts/AuthContext'
 import { LogoutButton } from '../components/auth/LogoutButton'
+import { MediaUpload } from '../components/MediaUpload'
 
 export default function DashboardPage() {
   const { user } = useAuth()
@@ -32,9 +33,24 @@ export default function DashboardPage() {
           <p className="text-gray-600 mb-6">
             You are logged in as <strong>{user?.email}</strong>.
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mb-6">
             This is a placeholder dashboard. Drill library and session planner will be added in later phases.
           </p>
+
+          {/* Temporary upload test - remove after Phase 4 verification */}
+          <div className="border-t pt-6 mt-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Test Media Upload
+            </h3>
+            <MediaUpload
+              onUploadComplete={(filePath, mediaType) => {
+                console.log('Upload complete:', { filePath, mediaType })
+              }}
+              onDelete={() => {
+                console.log('File deleted')
+              }}
+            />
+          </div>
         </div>
       </main>
     </div>
