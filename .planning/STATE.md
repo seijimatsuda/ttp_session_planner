@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 6 of 16 (Core UI Components)
-Plan: 1 of 4 in current phase
+Plan: 3 of 4 in current phase
 Status: In progress
-Last activity: 2026-01-27 — Completed 06-01-PLAN.md (UI Foundation Dependencies)
+Last activity: 2026-01-27 — Completed 06-03-PLAN.md (Layout Components)
 
-Progress: [████░░░░░░] 38% (5/16 phases completed, 18/48 plans completed)
+Progress: [████░░░░░░] 40% (5/16 phases completed, 20/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 19
-- Average duration: 3.7min
-- Total execution time: 1.18 hours
+- Total plans completed: 20
+- Average duration: 3.6min
+- Total execution time: 1.21 hours
 
 **By Phase:**
 
@@ -32,10 +32,10 @@ Progress: [████░░░░░░] 38% (5/16 phases completed, 18/48 pla
 | 03-database-schema-services | 3 | 13min | 4.3min |
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
 | 05-ios-media-proxy | 2 | 5min | 2.5min |
-| 06-core-ui-components | 1 | 3min | 3min |
+| 06-core-ui-components | 2 | 5min | 2.5min |
 
 **Recent Trend:**
-- Last 5 plans: 04-03 (5min), 05-01 (3min), 05-02 (2min), 06-01 (3min)
+- Last 5 plans: 05-01 (3min), 05-02 (2min), 06-01 (3min), 06-03 (2min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -94,6 +94,9 @@ Recent decisions affecting current work:
 - cn() combines clsx + tailwind-merge for conflict-free Tailwind class merging (06-01)
 - Sonner Toaster positioned top-right with richColors, closeButton, 4s duration (06-01)
 - AppErrorBoundary logs errors to console with componentStack for debugging (06-01)
+- min-h-11 min-w-11 for 44px touch targets on mobile menu buttons (06-03)
+- Body scroll lock when mobile sidebar open for UX (06-03)
+- Polymorphic 'as' prop on Container for semantic HTML flexibility (06-03)
 
 ### Pending Todos
 
@@ -106,7 +109,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed 06-01-PLAN.md (UI Foundation Dependencies)
+Stopped at: Completed 06-03-PLAN.md (Layout Components)
 Resume file: None
 
 ## Production URLs
