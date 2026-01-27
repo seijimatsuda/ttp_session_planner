@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 5 of 16 (iOS Media Proxy)
-Plan: 0 of 2 in current phase
-Status: Ready to start
-Last activity: 2026-01-27 — Completed Phase 4 (Supabase Storage & Media Upload)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-01-27 — Completed 05-01-PLAN.md (Media Proxy Route)
 
-Progress: [██░░░░░░░░] 25% (4/16 phases completed, 15/48 plans completed)
+Progress: [███░░░░░░░] 33% (4/16 phases completed, 16/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 15
-- Average duration: 4.1min
-- Total execution time: 1.02 hours
+- Total plans completed: 16
+- Average duration: 4.0min
+- Total execution time: 1.07 hours
 
 **By Phase:**
 
@@ -31,9 +31,10 @@ Progress: [██░░░░░░░░] 25% (4/16 phases completed, 15/48 pla
 | 02-authentication-system | 3 | 6min | 2min |
 | 03-database-schema-services | 3 | 13min | 4.3min |
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
+| 05-ios-media-proxy | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (6min), 04-01 (2min), 04-02 (2min), 04-03 (5min)
+- Last 5 plans: 04-01 (2min), 04-02 (2min), 04-03 (5min), 05-01 (3min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -84,6 +85,10 @@ Recent decisions affecting current work:
 - Bucket created via Dashboard UI due to SQL migration permission limitations (04-03)
 - Shared viewing RLS: All authenticated users can view files, only owner can INSERT/DELETE (04-03)
 - playsInline attribute on video elements for iOS compatibility (04-03)
+- Express 5 named wildcards: /:bucket/*path required for path-to-regexp v8 compatibility (05-01)
+- 1MB chunk size for video streaming with stream.pipeline() for safe error handling (05-01)
+- 1 hour signed URL expiry for long videos and paused playback (05-01)
+- CORS exposedHeaders for media endpoints: Content-Range, Accept-Ranges, Content-Length (05-01)
 
 ### Pending Todos
 
@@ -96,7 +101,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed Phase 4 (Supabase Storage & Media Upload)
+Stopped at: Completed 05-01-PLAN.md (Media Proxy Route)
 Resume file: None
 
 ## Production URLs
