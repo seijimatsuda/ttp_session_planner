@@ -19,7 +19,7 @@ import {
   updateDrill,
   deleteDrill,
 } from '../services/drills.service'
-import type { DrillInsert, DrillUpdate, DrillCategory } from '../lib/database.types'
+import type { Drill, DrillInsert, DrillUpdate, DrillCategory } from '../lib/database.types'
 
 // Query key factory for consistent cache keys
 export const drillKeys = {
@@ -97,7 +97,7 @@ export function useCreateDrill() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: (drill: DrillInsert) => createDrill(client, drill),
+    mutationFn: async (drill: DrillInsert): Promise<Drill> => createDrill(client, drill),
     onSuccess: (data) => {
       // Invalidate all drill lists for this user
       queryClient.invalidateQueries({
@@ -115,7 +115,7 @@ export function useUpdateDrill() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: ({ id, updates }: { id: string; updates: DrillUpdate }) =>
+    mutationFn: async ({ id, updates }: { id: string; updates: DrillUpdate }): Promise<Drill> =>
       updateDrill(client, id, updates),
     onSuccess: (data) => {
       // Update the specific drill in cache

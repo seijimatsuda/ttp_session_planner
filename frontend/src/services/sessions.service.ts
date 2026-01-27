@@ -6,14 +6,14 @@
  */
 
 import type { SupabaseClient } from '@supabase/supabase-js'
-import type { Database, SessionInsert, SessionUpdate } from '../lib/database.types'
+import type { Database, Session, SessionInsert, SessionUpdate } from '../lib/database.types'
 
 type Client = SupabaseClient<Database>
 
 /**
  * Get all sessions for a specific user, ordered by creation date (newest first)
  */
-export async function getSessionsByUser(client: Client, userId: string) {
+export async function getSessionsByUser(client: Client, userId: string): Promise<Session[]> {
   const { data, error } = await client
     .from('sessions')
     .select('*')
@@ -21,13 +21,13 @@ export async function getSessionsByUser(client: Client, userId: string) {
     .order('created_at', { ascending: false })
 
   if (error) throw error
-  return data
+  return data as Session[]
 }
 
 /**
  * Get a single session by ID
  */
-export async function getSessionById(client: Client, id: string) {
+export async function getSessionById(client: Client, id: string): Promise<Session> {
   const { data, error } = await client
     .from('sessions')
     .select('*')
@@ -35,13 +35,13 @@ export async function getSessionById(client: Client, id: string) {
     .single()
 
   if (error) throw error
-  return data
+  return data as Session
 }
 
 /**
  * Create a new session
  */
-export async function createSession(client: Client, session: SessionInsert) {
+export async function createSession(client: Client, session: SessionInsert): Promise<Session> {
   const { data, error } = await client
     .from('sessions')
     .insert(session)
@@ -49,7 +49,7 @@ export async function createSession(client: Client, session: SessionInsert) {
     .single()
 
   if (error) throw error
-  return data
+  return data as Session
 }
 
 /**
@@ -59,7 +59,7 @@ export async function updateSession(
   client: Client,
   id: string,
   updates: SessionUpdate
-) {
+): Promise<Session> {
   const { data, error } = await client
     .from('sessions')
     .update(updates)
@@ -68,7 +68,7 @@ export async function updateSession(
     .single()
 
   if (error) throw error
-  return data
+  return data as Session
 }
 
 /**

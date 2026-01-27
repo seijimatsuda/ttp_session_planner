@@ -17,7 +17,7 @@ import {
   updateSession,
   deleteSession,
 } from '../services/sessions.service'
-import type { SessionInsert, SessionUpdate } from '../lib/database.types'
+import type { Session, SessionInsert, SessionUpdate } from '../lib/database.types'
 
 // Query key factory for consistent cache keys
 export const sessionKeys = {
@@ -62,7 +62,7 @@ export function useCreateSession() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: (session: SessionInsert) => createSession(client, session),
+    mutationFn: async (session: SessionInsert): Promise<Session> => createSession(client, session),
     onSuccess: (data) => {
       // Invalidate session lists for this user
       queryClient.invalidateQueries({
@@ -80,7 +80,7 @@ export function useUpdateSession() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: ({ id, updates }: { id: string; updates: SessionUpdate }) =>
+    mutationFn: async ({ id, updates }: { id: string; updates: SessionUpdate }): Promise<Session> =>
       updateSession(client, id, updates),
     onSuccess: (data) => {
       // Update the specific session in cache
