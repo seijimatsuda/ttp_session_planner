@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 3 of 16 (Database Schema & Services)
-Plan: 0 of 3 in current phase
-Status: Ready to plan
-Last activity: 2026-01-27 — Completed Phase 2 (Authentication System)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-27 — Completed 03-01-PLAN.md (Database Tables & RLS)
 
-Progress: [██░░░░░░░░] 13% (2/16 phases completed, 7/48 plans completed)
+Progress: [██░░░░░░░░] 17% (2/16 phases completed, 8/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: 5min
 - Total execution time: 0.6 hours
 
@@ -29,9 +29,10 @@ Progress: [██░░░░░░░░] 13% (2/16 phases completed, 7/48 plan
 |-------|-------|-------|----------|
 | 01-project-setup-infrastructure | 4 | 28min | 7min |
 | 02-authentication-system | 3 | 6min | 2min |
+| 03-database-schema-services | 1 | 3min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-04 (7min), 02-01 (2min), 02-02 (2min), 02-03 (2min)
+- Last 5 plans: 02-01 (2min), 02-02 (2min), 02-03 (2min), 03-01 (3min)
 - Trend: Fast execution on straightforward implementation plans
 
 *Updated after each plan completion*
@@ -61,6 +62,10 @@ Recent decisions affecting current work:
 - LoginPage preserves intended destination via location.state.from (02-02)
 - SignupPage handles both email confirmation enabled/disabled flows (02-02)
 - All auth forms use controlled components with React useState (02-02)
+- RLS policies use (SELECT auth.uid()) wrapper for 94-99% performance improvement over bare auth.uid() (03-01)
+- Category validation via CHECK constraint for flexibility over PostgreSQL enum types (03-01)
+- JSONB for session grid_data for flexible schema evolution without migrations (03-01)
+- Denormalized creator_email field for display without auth.users joins (03-01)
 
 ### Pending Todos
 
@@ -73,7 +78,7 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-01-27
-Stopped at: Completed Phase 2 (Authentication System)
+Stopped at: Completed 03-01-PLAN.md (Database Tables & RLS)
 Resume file: None
 
 ## Production URLs
