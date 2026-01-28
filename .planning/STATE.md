@@ -10,17 +10,17 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 9 of 16 (Drill Detail & Edit)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 09-01-PLAN.md
+Last activity: 2026-01-28 — Completed 09-03-PLAN.md
 
-Progress: [█████░░░░░] 58% (8/16 phases completed, 28/48 plans completed)
+Progress: [█████░░░░░] 60% (8/16 phases completed, 29/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 28
-- Average duration: 4.2min
+- Total plans completed: 29
+- Average duration: 4.1min
 - Total execution time: 2.0 hours
 
 **By Phase:**
@@ -35,11 +35,11 @@ Progress: [█████░░░░░] 58% (8/16 phases completed, 28/48 pla
 | 06-core-ui-components | 4 | 41min | 10.3min |
 | 07-add-drill-feature | 3 | 10min | 3.3min |
 | 08-drill-library | 2 | 3.8min | 1.9min |
-| 09-drill-detail-edit | 1 | 4min | 4min |
+| 09-drill-detail-edit | 2 | 7.7min | 3.9min |
 
 **Recent Trend:**
-- Last 5 plans: 07-03 (3min), 08-01 (1.6min), 08-02 (2.2min), 09-01 (4min)
-- Trend: Phase 9 started - drill detail page with iOS video support
+- Last 5 plans: 08-01 (1.6min), 08-02 (2.2min), 09-01 (4min), 09-03 (3.7min)
+- Trend: Phase 9 in progress - drill detail with delete confirmation
 
 *Updated after each plan completion*
 
@@ -126,6 +126,9 @@ Recent decisions affecting current work:
 - playsInline (capital I) attribute for iOS video inline playback (09-01)
 - Route /drills/:id placed after /drills/new for correct specificity (09-01)
 - Detail page pattern: useParams → hook → loading/error/success states (09-01)
+- DeleteDrillDialog isDeleting prop keeps dialog open during mutation (09-03)
+- onDelete re-throws errors to prevent dialog close on failure (09-03)
+- Dialog confirmation pattern: isOpen state + onClose/onConfirm callbacks (09-03)
 
 ### Pending Todos
 
@@ -137,8 +140,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28
-Stopped at: Completed 09-01-PLAN.md
+Last session: 2026-01-28 06:07:02 UTC
+Stopped at: Completed 09-03-PLAN.md
 Resume file: None
 
 ## Production URLs
