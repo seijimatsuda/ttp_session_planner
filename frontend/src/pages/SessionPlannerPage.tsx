@@ -6,7 +6,7 @@
  */
 
 import { useState, useMemo } from 'react'
-import { DndContext, DragEndEvent, DragStartEvent, DragOverlay } from '@dnd-kit/core'
+import { DndContext, type DragEndEvent, type DragStartEvent, DragOverlay } from '@dnd-kit/core'
 import { useAuth } from '@/contexts/AuthContext'
 import { useDrills } from '@/hooks/useDrills'
 import { useSessionSensors } from '@/hooks/useSessionSensors'
@@ -78,7 +78,7 @@ export function SessionPlannerPage() {
                 drills={drillMap}
                 onCellClick={handleCellClick}
                 onRemoveDrill={removeDrill}
-                targetedCellKey={selectedDrillId ? 'any-empty' : null}
+                targetedCellKey={null}
               />
             </div>
 
