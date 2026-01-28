@@ -45,11 +45,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Sessions
 
-- [ ] **SESS-01**: User can create session with 4x3 grid (Activation/Dribbling/Passing/Shooting rows)
-- [ ] **SESS-02**: User can drag drills into grid cells (desktop)
-- [ ] **SESS-03**: User can drag drills into grid cells (iPad touch)
-- [ ] **SESS-04**: User can click to add drill to grid cell (alternative to drag)
-- [ ] **SESS-05**: User can remove drill from grid cell
+- [x] **SESS-01**: User can create session with 4x3 grid (Activation/Dribbling/Passing/Shooting rows)
+- [x] **SESS-02**: User can drag drills into grid cells (desktop)
+- [x] **SESS-03**: User can drag drills into grid cells (iPad touch)
+- [x] **SESS-04**: User can click to add drill to grid cell (alternative to drag)
+- [x] **SESS-05**: User can remove drill from grid cell
 - [ ] **SESS-06**: User can save session with name
 - [ ] **SESS-07**: User can view list of saved sessions
 - [ ] **SESS-08**: User can load and view saved session
@@ -133,11 +133,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DRILL-07 | Phase 9 | Complete |
 | DRILL-08 | Phase 9 | Complete |
 | DRILL-09 | Phase 9 | Complete |
-| SESS-01 | Phase 10 | Pending |
-| SESS-02 | Phase 10 | Pending |
-| SESS-03 | Phase 10 | Pending |
-| SESS-04 | Phase 10 | Pending |
-| SESS-05 | Phase 10 | Pending |
+| SESS-01 | Phase 10 | Complete |
+| SESS-02 | Phase 10 | Complete |
+| SESS-03 | Phase 10 | Complete |
+| SESS-04 | Phase 10 | Complete |
+| SESS-05 | Phase 10 | Complete |
 | SESS-06 | Phase 11 | Pending |
 | SESS-07 | Phase 11 | Pending |
 | SESS-08 | Phase 11 | Pending |
