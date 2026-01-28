@@ -16,7 +16,7 @@ import { useDebounce } from '@/hooks/useDebounce'
 import type { DrillCategory } from '@/lib/database.types'
 import { AppShell } from '@/components/layout/AppShell'
 import { Container } from '@/components/layout/Container'
-import { DrillFilters, DrillGrid } from '@/components/drills'
+import { DrillFilters, VirtualDrillGrid } from '@/components/drills'
 
 /**
  * Main drill library page
@@ -59,7 +59,7 @@ export function DrillLibraryPage() {
           onCategoryChange={setCategoryFilter}
         />
 
-        <DrillGrid
+        <VirtualDrillGrid
           drills={filteredDrills}
           isLoading={isLoading}
           hasActiveFilters={hasActiveFilters}
