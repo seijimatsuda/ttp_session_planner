@@ -126,6 +126,10 @@ Recent decisions affecting current work:
 - playsInline (capital I) attribute for iOS video inline playback (09-01)
 - Route /drills/:id placed after /drills/new for correct specificity (09-01)
 - Detail page pattern: useParams → hook → loading/error/success states (09-01)
+- Edit mode detection via optional drill prop (isEditMode = !!drill) for form reusability (09-02)
+- Form defaultValues conditionally set based on drill prop presence (09-02)
+- Edit mode does NOT reset form after success (navigates instead) (09-02)
+- Route ordering: /drills/new → /drills/:id/edit → /drills/:id → /drills for correct specificity (09-02)
 - DeleteDrillDialog isDeleting prop keeps dialog open during mutation (09-03)
 - onDelete re-throws errors to prevent dialog close on failure (09-03)
 - Dialog confirmation pattern: isOpen state + onClose/onConfirm callbacks (09-03)
@@ -140,8 +144,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28 06:07:02 UTC
-Stopped at: Completed 09-03-PLAN.md
+Last session: 2026-01-28 06:07:20 UTC
+Stopped at: Completed 09-02-PLAN.md and 09-03-PLAN.md (wave 2 parallel execution)
 Resume file: None
 
 ## Production URLs
