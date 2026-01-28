@@ -169,10 +169,11 @@ Plans:
   2. User can search drills by name with instant filtering
   3. User can filter drills by category (Activation, Dribbling, Passing, Shooting)
   4. Empty state shown when no drills match filters
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: TBD
+- [ ] 08-01-PLAN.md — Create useDebounce hook, DrillCard, and DrillEmptyState components
+- [ ] 08-02-PLAN.md — Create DrillFilters, DrillGrid, DrillLibraryPage with search and filtering
 
 ### Phase 9: Drill Detail & Edit
 **Goal**: Users can view full drill information and modify existing drills
@@ -304,8 +305,8 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 5. iOS Media Proxy | 2/2 | ✓ Complete | 2026-01-27 |
 | 6. Core UI Components | 4/4 | ✓ Complete | 2026-01-27 |
 | 7. Add Drill Feature | 3/3 | ✓ Complete | 2026-01-28 |
-| 8. Drill Library | 0/? | Not started | - |
-| 9. Drill Detail & Edit | 0/? | Not started | - |
+| 8. Drill Library | 0/2 | Not started | - |
+| 9. Drill Detail & Edit | 0/3 | Not started | - |
 | 10. Session Planner Grid | 0/? | Not started | - |
 | 11. Save & Load Sessions | 0/? | Not started | - |
 | 12. Dashboard | 0/? | Not started | - |
