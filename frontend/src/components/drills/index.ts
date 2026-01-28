@@ -9,3 +9,4 @@ export { DrillCard } from "./DrillCard";
 export { DrillEmptyState } from "./DrillEmptyState";
 export { DrillFilters } from './DrillFilters';
 export { DrillGrid } from './DrillGrid';
+export { DrillDetail } from './DrillDetail';
