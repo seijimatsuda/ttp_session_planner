@@ -1,6 +1,5 @@
 FROM node:20-bookworm-slim
 
-# Force rebuild: 2026-01-28
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
@@ -23,9 +22,6 @@ RUN npm install --production=false
 
 # Copy source code
 COPY . .
-
-# Debug: Show what file we're actually building
-RUN echo "=== DEBUG: media.ts content ===" && head -110 src/routes/media.ts && echo "=== END DEBUG ==="
 
 # Build TypeScript
 RUN npm run build
