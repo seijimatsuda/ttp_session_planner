@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 7 of 16 (Add Drill Feature)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 07-01-PLAN.md (Foundation Artifacts)
+Last activity: 2026-01-28 — Completed 07-02-PLAN.md (Drill CRUD Form)
 
-Progress: [████░░░░░░] 48% (6/16 phases completed, 23/48 plans completed)
+Progress: [████░░░░░░] 50% (6/16 phases completed, 24/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 23
-- Average duration: 4.4min
-- Total execution time: 1.68 hours
+- Total plans completed: 24
+- Average duration: 4.5min
+- Total execution time: 1.78 hours
 
 **By Phase:**
 
@@ -33,11 +33,11 @@ Progress: [████░░░░░░] 48% (6/16 phases completed, 23/48 pla
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
 | 05-ios-media-proxy | 2 | 5min | 2.5min |
 | 06-core-ui-components | 4 | 41min | 10.3min |
-| 07-add-drill-feature | 1 | 1min | 1min |
+| 07-add-drill-feature | 2 | 7min | 3.5min |
 
 **Recent Trend:**
-- Last 5 plans: 06-03 (2min), 06-02 (6min), 06-04 (30min), 07-01 (1min)
-- Trend: 07-01 fastest plan yet (foundation artifacts only)
+- Last 5 plans: 06-02 (6min), 06-04 (30min), 07-01 (1min), 07-02 (6min)
+- Trend: Core feature implementation steady at 6min with bug fixes included
 
 *Updated after each plan completion*
 
@@ -107,6 +107,11 @@ Recent decisions affecting current work:
 - Custom Zod transform for num_players to avoid z.coerce.number() pitfall (converts empty string to 0) (07-01)
 - TagInput keyboard shortcuts: Enter/Tab to add, Backspace on empty to remove last (07-01)
 - DRILL_CATEGORIES const array matches database CHECK constraint values (07-01)
+- Separate media state from form state to track upload progress independently (07-02)
+- Form disable logic: isSubmitting || isPending || isUploading for safe submissions (07-02)
+- valueAsNumber register option for number inputs to handle HTML coercion (07-02)
+- Zod enum uses message parameter, not errorMap function (07-02)
+- Zod array .default() makes fields required - use form defaultValues instead (07-02)
 
 ### Pending Todos
 
@@ -119,7 +124,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 07-01-PLAN.md (Foundation Artifacts)
+Stopped at: Completed 07-02-PLAN.md (Drill CRUD Form)
 Resume file: None
 
 ## Production URLs
