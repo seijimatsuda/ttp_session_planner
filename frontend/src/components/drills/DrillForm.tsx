@@ -3,7 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { useAuth } from "@/contexts/AuthContext";
-import { useCreateDrill } from "@/hooks/useDrills";
+import { useCreateDrill, useUpdateDrill } from "@/hooks/useDrills";
 import { MediaUpload } from "@/components/MediaUpload";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
@@ -15,14 +15,17 @@ import {
 } from "./DrillForm.schema";
 import { TagInput } from "./TagInput";
 import type { MediaType } from "@/types/media";
+import type { Drill } from "@/lib/database.types";
 
 interface DrillFormProps {
-  /** Callback after successful drill creation */
+  /** Drill to edit - if provided, form is in edit mode */
+  drill?: Drill;
+  /** Callback after successful creation or update */
   onSuccess?: (drillId: string) => void;
 }
 
 /**
- * DrillForm component for creating new drills
+ * DrillForm component for creating new drills or editing existing ones
  *
  * Features:
  * - React Hook Form with Zod validation
@@ -31,10 +34,25 @@ interface DrillFormProps {
  * - Real-time validation on blur
  * - Loading states during upload and mutation
  * - Success/error feedback via toasts
+ * - Supports both create and edit modes
  */
-export function DrillForm({ onSuccess }: DrillFormProps) {
+export function DrillForm({ drill, onSuccess }: DrillFormProps) {
   const { user } = useAuth();
   const createDrill = useCreateDrill();
+  const updateDrill = useUpdateDrill();
+  const isEditMode = !!drill;
+
+  // Conditionally set defaultValues based on mode
+  const defaultValues = drill
+    ? {
+        name: drill.name,
+        category: drill.category || "activation",
+        num_players: drill.num_players ?? undefined,
+        equipment: drill.equipment || [],
+        tags: drill.tags || [],
+        video_url: drill.video_url || "",
+      }
+    : drillFormDefaults;
 
   // Form state
   const {
@@ -45,48 +63,70 @@ export function DrillForm({ onSuccess }: DrillFormProps) {
     reset,
   } = useForm<DrillFormData>({
     resolver: zodResolver(drillFormSchema),
-    defaultValues: drillFormDefaults,
+    defaultValues,
     mode: "onBlur",
   });
 
-  // Media upload state (separate from form)
-  const [mediaFilePath, setMediaFilePath] = useState<string | null>(null);
+  // Media upload state (separate from form) - initialize with existing media in edit mode
+  const [mediaFilePath, setMediaFilePath] = useState<string | null>(
+    drill?.video_file_path ?? null
+  );
   const [mediaType, setMediaType] = useState<MediaType | null>(null);
   const [isUploading, setIsUploading] = useState(false);
 
-  // Submit handler
+  // Submit handler - branches based on mode
   const onSubmit = async (data: DrillFormData) => {
     if (!user) {
-      toast.error("You must be logged in to create a drill");
+      toast.error(`You must be logged in to ${isEditMode ? "update" : "create"} a drill`);
       return;
     }
 
     try {
-      const drillData = {
-        ...data,
-        user_id: user.id,
-        creator_email: user.email!,
-        video_file_path: mediaFilePath,
-        video_url: data.video_url || null, // Convert empty string to null
-      };
+      if (isEditMode) {
+        // Edit mode: Use updateDrill mutation
+        const updates = {
+          name: data.name,
+          category: data.category,
+          num_players: data.num_players ?? null,
+          equipment: data.equipment,
+          tags: data.tags,
+          video_url: data.video_url || null,
+          video_file_path: mediaFilePath,
+        };
 
-      const newDrill = await createDrill.mutateAsync(drillData);
-      toast.success("Drill created successfully!");
+        const updatedDrill = await updateDrill.mutateAsync({ id: drill.id, updates });
+        toast.success("Drill updated successfully!");
 
-      // Reset form and media state
-      reset();
-      setMediaFilePath(null);
-      setMediaType(null);
+        // Edit mode does NOT reset form - navigate instead
+        onSuccess?.(updatedDrill.id);
+      } else {
+        // Create mode: Use createDrill mutation (existing code)
+        const drillData = {
+          ...data,
+          user_id: user.id,
+          creator_email: user.email!,
+          video_file_path: mediaFilePath,
+          video_url: data.video_url || null, // Convert empty string to null
+        };
 
-      // Trigger success callback
-      onSuccess?.(newDrill.id);
+        const newDrill = await createDrill.mutateAsync(drillData);
+        toast.success("Drill created successfully!");
+
+        // Reset form and media state
+        reset();
+        setMediaFilePath(null);
+        setMediaType(null);
+
+        // Trigger success callback
+        onSuccess?.(newDrill.id);
+      }
     } catch (error) {
-      console.error("Failed to create drill:", error);
-      toast.error("Failed to create drill. Please try again.");
+      console.error(`Failed to ${isEditMode ? "update" : "create"} drill:`, error);
+      toast.error(`Failed to ${isEditMode ? "update" : "create"} drill. Please try again.`);
     }
   };
 
-  const isFormDisabled = isSubmitting || createDrill.isPending || isUploading;
+  const isFormDisabled = isSubmitting || createDrill.isPending || updateDrill.isPending || isUploading;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -139,6 +179,7 @@ export function DrillForm({ onSuccess }: DrillFormProps) {
             setIsUploading(false);
           }}
           onDelete={() => {
+            // When media is deleted in edit mode, set to null to allow removing media
             setMediaFilePath(null);
             setMediaType(null);
           }}
@@ -204,13 +245,17 @@ export function DrillForm({ onSuccess }: DrillFormProps) {
       <Button
         type="submit"
         disabled={isFormDisabled}
-        loading={isSubmitting || createDrill.isPending}
+        loading={isSubmitting || createDrill.isPending || updateDrill.isPending}
         className="w-full"
       >
         {isUploading
           ? "Uploading..."
-          : isSubmitting || createDrill.isPending
-          ? "Creating..."
+          : isSubmitting || createDrill.isPending || updateDrill.isPending
+          ? isEditMode
+            ? "Updating..."
+            : "Creating..."
+          : isEditMode
+          ? "Update Drill"
           : "Create Drill"}
       </Button>
     </form>
