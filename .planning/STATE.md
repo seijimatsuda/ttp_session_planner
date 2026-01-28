@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 6 - Core UI Components
+**Current focus:** Phase 6 - Core UI Components (COMPLETE)
 
 ## Current Position
 
-Phase: 6 of 16 (Core UI Components)
-Plan: 3 of 4 in current phase
-Status: In progress
-Last activity: 2026-01-27 — Completed 06-02-PLAN.md (Core UI Primitives)
+Phase: 6 of 16 (Core UI Components) - COMPLETE
+Plan: 4 of 4 in current phase
+Status: Phase complete
+Last activity: 2026-01-28 — Completed 06-04-PLAN.md (App Integration)
 
-Progress: [████░░░░░░] 42% (5/16 phases completed, 21/48 plans completed)
+Progress: [████░░░░░░] 46% (6/16 phases completed, 22/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 21
-- Average duration: 3.7min
-- Total execution time: 1.31 hours
+- Total plans completed: 22
+- Average duration: 4.5min
+- Total execution time: 1.65 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: [████░░░░░░] 42% (5/16 phases completed, 21/48 pla
 | 03-database-schema-services | 3 | 13min | 4.3min |
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
 | 05-ios-media-proxy | 2 | 5min | 2.5min |
-| 06-core-ui-components | 3 | 11min | 3.7min |
+| 06-core-ui-components | 4 | 41min | 10.3min |
 
 **Recent Trend:**
-- Last 5 plans: 05-02 (2min), 06-01 (3min), 06-03 (2min), 06-02 (6min)
-- Trend: 06-02 took longer due to auto-fixing pre-existing TypeScript build errors
+- Last 5 plans: 06-01 (3min), 06-03 (2min), 06-02 (6min), 06-04 (30min)
+- Trend: 06-04 included human checkpoint verification time
 
 *Updated after each plan completion*
 
@@ -101,6 +101,8 @@ Recent decisions affecting current work:
 - forwardRef pattern for ref forwarding on primitive components (06-02)
 - Barrel exports from components/ui/index.ts for clean imports (06-02)
 - @/* path alias configured in tsconfig.app.json and vite.config.ts (06-02)
+- Provider hierarchy: AppErrorBoundary > SkeletonProvider > App > Toaster (06-04)
+- Page layout pattern: AppShell with sidebar/header props, Container for content (06-04)
 
 ### Pending Todos
 
@@ -112,8 +114,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-27
-Stopped at: Completed 06-02-PLAN.md (Core UI Primitives)
+Last session: 2026-01-28
+Stopped at: Completed 06-04-PLAN.md (App Integration) - Phase 6 complete
 Resume file: None
 
 ## Production URLs
