@@ -249,10 +249,12 @@ Plans:
   2. Network errors display user-friendly messages with retry options
   3. Validation errors highlight specific fields with helpful text
   4. Success actions show confirmation toasts
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 13-01: TBD
+- [ ] 13-01-PLAN.md — Create getUserFriendlyError helper utility for consistent error messages
+- [ ] 13-02-PLAN.md — Standardize auth pages (LoginPage, SignupPage, LogoutButton) with toasts
+- [ ] 13-03-PLAN.md — Add toast notifications to MediaUpload component
 
 ### Phase 14: iOS/iPad Optimization
 **Goal**: Application works flawlessly on iPads and iPhones in field conditions
@@ -315,7 +317,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 10. Session Planner Grid | 0/3 | Not started | - |
 | 11. Save & Load Sessions | 0/3 | Not started | - |
 | 12. Dashboard | 0/2 | Not started | - |
-| 13. Error Handling & Loading States | 0/? | Not started | - |
+| 13. Error Handling & Loading States | 0/3 | Not started | - |
 | 14. iOS/iPad Optimization | 0/? | Not started | - |
 | 15. Performance Optimization | 0/? | Not started | - |
 | 16. Final Testing & Launch | 0/? | Not started | - |
