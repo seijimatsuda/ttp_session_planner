@@ -294,10 +294,13 @@ Plans:
   2. Application tested on iPad Safari and Chrome (real devices)
   3. Application tested on iPhone Safari and Android Chrome
   4. Production deployment verified with real drill and session creation
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 16-01: TBD
+- [ ] 16-01-PLAN.md — Verify backend proxy Range requests and production environment
+- [ ] 16-02-PLAN.md — Execute desktop browser testing (Chrome, Safari, Firefox, Edge)
+- [ ] 16-03-PLAN.md — Execute mobile/tablet testing via BrowserStack (iPad, iPhone, Android)
+- [ ] 16-04-PLAN.md — Final production smoke tests and launch verification
 
 ## Progress
 
@@ -321,4 +324,4 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
 | 14. iOS/iPad Optimization | 0/2 | Not started | - |
 | 15. Performance Optimization | 0/? | Not started | - |
-| 16. Final Testing & Launch | 0/? | Not started | - |
+| 16. Final Testing & Launch | 0/4 | Not started | - |
