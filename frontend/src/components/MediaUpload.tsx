@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
+import { toast } from 'sonner'
 import { useMediaUpload } from '../hooks/useMediaUpload'
 import { deleteFile, getSignedUrl } from '../lib/storage'
 import { ALLOWED_MIME_TYPES, MAX_FILE_SIZE, type MediaType } from '../types/media'
@@ -29,6 +30,8 @@ export function MediaUpload({
     onSuccess: async (filePath, type) => {
       setUploadedFilePath(filePath)
       setMediaType(type)
+      // Show success toast
+      toast.success('File uploaded successfully!')
       // Get signed URL for preview
       try {
         const url = await getSignedUrl(filePath)
@@ -37,6 +40,10 @@ export function MediaUpload({
         console.error('Failed to get preview URL:', err)
       }
       onUploadComplete?.(filePath, type)
+    },
+    onError: (errorMessage) => {
+      // Show error toast (useMediaUpload already provides user-friendly messages)
+      toast.error(errorMessage)
     }
   })
 
@@ -76,10 +83,13 @@ export function MediaUpload({
       setMediaType(null)
       setPreviewUrl(null)
       reset()
+      toast.success('File deleted')
       onDelete?.()
     } catch (err) {
       console.error('Delete failed:', err)
-      setDeleteError(err instanceof Error ? err.message : 'Delete failed')
+      const errorMsg = err instanceof Error ? err.message : 'Delete failed'
+      setDeleteError(errorMsg)
+      toast.error(errorMsg)
     } finally {
       setIsDeleting(false)
     }
