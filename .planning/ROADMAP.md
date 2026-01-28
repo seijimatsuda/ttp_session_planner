@@ -30,7 +30,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 ### Milestone 2: Core Features
 
 - [x] **Phase 7: Add Drill Feature** - Create new drills with metadata and media
-- [ ] **Phase 8: Drill Library** - Grid view with search and category filtering
+- [x] **Phase 8: Drill Library** - Grid view with search and category filtering
 - [ ] **Phase 9: Drill Detail & Edit** - View full drill details, edit, delete
 - [ ] **Phase 10: Session Planner Grid** - 4x3 drag-and-drop grid for session planning
 - [ ] **Phase 11: Save & Load Sessions** - Persist and retrieve session configurations
@@ -172,8 +172,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 08-01-PLAN.md — Create useDebounce hook, DrillCard, and DrillEmptyState components
-- [ ] 08-02-PLAN.md — Create DrillFilters, DrillGrid, DrillLibraryPage with search and filtering
+- [x] 08-01-PLAN.md — Create useDebounce hook, DrillCard, and DrillEmptyState components
+- [x] 08-02-PLAN.md — Create DrillFilters, DrillGrid, DrillLibraryPage with search and filtering
 
 ### Phase 9: Drill Detail & Edit
 **Goal**: Users can view full drill information and modify existing drills
@@ -307,7 +307,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 5. iOS Media Proxy | 2/2 | ✓ Complete | 2026-01-27 |
 | 6. Core UI Components | 4/4 | ✓ Complete | 2026-01-27 |
 | 7. Add Drill Feature | 3/3 | ✓ Complete | 2026-01-28 |
-| 8. Drill Library | 0/2 | Not started | - |
+| 8. Drill Library | 2/2 | ✓ Complete | 2026-01-28 |
 | 9. Drill Detail & Edit | 0/3 | Not started | - |
 | 10. Session Planner Grid | 0/3 | Not started | - |
 | 11. Save & Load Sessions | 0/? | Not started | - |

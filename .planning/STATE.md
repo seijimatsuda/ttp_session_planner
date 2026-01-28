@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 8 - Drill Library
+**Current focus:** Phase 9 - Drill Detail & Edit
 
 ## Current Position
 
-Phase: 8 of 16 (Drill Library)
-Plan: 2 of 2 in current phase (Phase complete)
-Status: Phase 8 complete
-Last activity: 2026-01-28 — Completed 08-02-PLAN.md
+Phase: 9 of 16 (Drill Detail & Edit)
+Plan: 0 of 3 in current phase
+Status: Ready to start
+Last activity: 2026-01-28 — Completed Phase 8 (Drill Library)
 
-Progress: [█████░░░░░] 56% (8/16 phases complete, 27/48 plans completed)
+Progress: [█████░░░░░] 50% (8/16 phases completed, 27/48 plans completed)
 
 ## Performance Metrics
 
