@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 13 of 16 (Error Handling & Loading States)
-Plan: 3 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 13-03-PLAN.md
+Last activity: 2026-01-28 — Completed 13-02-PLAN.md
 
 Progress: [███████░░░] 73% (10/16 phases completed, 35/48 plans completed)
 
@@ -37,11 +37,11 @@ Progress: [███████░░░] 73% (10/16 phases completed, 35/48 pl
 | 08-drill-library | 2 | 3.8min | 1.9min |
 | 09-drill-detail-edit | 2 | 7.7min | 3.9min |
 | 10-session-planner-grid | 3 | 12min | 4min |
-| 13-error-handling-loading-states | 2 | 1.9min | 0.95min |
+| 13-error-handling-loading-states | 2 | 3.7min | 1.85min |
 
 **Recent Trend:**
-- Last 5 plans: 10-01 (3min), 10-02 (8min), 10-03 (1min), 13-01 (0.7min), 13-03 (1.2min)
-- Trend: Error handling phase progressing - toast notifications added to upload components
+- Last 5 plans: 10-02 (8min), 10-03 (1min), 13-01 (0.7min), 13-02 (3min)
+- Trend: Error handling phase progressing - auth pages standardized with toasts
 
 *Updated after each plan completion*
 
@@ -149,8 +149,10 @@ Recent decisions affecting current work:
 - getUserFriendlyError() centralizes error message conversion to user-friendly text (13-01)
 - Error helper handles Supabase auth errors, network errors, and provides fallback messages (13-01)
 - Toast notifications (via Sonner) are primary error display mechanism across the app (13-01)
-- MediaUpload shows toast notifications for upload/delete operations while keeping inline errors for persistent context (13-03)
-- useMediaUpload hook provides user-friendly error messages via onError callback - no need for getUserFriendlyError wrapper (13-03)
+- Auth pages use toast.error(getUserFriendlyError(error)) pattern for consistent error handling (13-02)
+- Auth success actions show toast.success before navigation for user feedback (13-02)
+- Email confirmation message kept inline in SignupPage (needs persistent visibility vs transient toast) (13-02)
+- Button component loading prop handles spinner + disabled state automatically (13-02)
 
 ### Pending Todos
 
@@ -162,8 +164,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28T07:42:30Z
-Stopped at: Completed 13-03-PLAN.md (MediaUpload toast notifications added)
+Last session: 2026-01-28T07:44:11Z
+Stopped at: Completed 13-02-PLAN.md (Auth pages standardized with toasts)
 Resume file: None
 
 ## Production URLs
