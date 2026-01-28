@@ -201,10 +201,12 @@ Plans:
   3. User can drag drills from library into grid cells on iPad with touch
   4. User can click drill then click cell as alternative to dragging
   5. User can remove drill from grid cell
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 10-01: TBD
+- [ ] 10-01-PLAN.md — Install dnd-kit, create session grid types and sensor/state hooks
+- [ ] 10-02-PLAN.md — Create GridCell, DraggableDrillCard, SessionGrid, DrillLibrarySidebar components
+- [ ] 10-03-PLAN.md — Create SessionPlannerPage with DndContext, wire routes, verify all interactions
 
 ### Phase 11: Save & Load Sessions
 **Goal**: Users can persist session configurations and retrieve them later
@@ -307,7 +309,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 7. Add Drill Feature | 3/3 | ✓ Complete | 2026-01-28 |
 | 8. Drill Library | 0/2 | Not started | - |
 | 9. Drill Detail & Edit | 0/3 | Not started | - |
-| 10. Session Planner Grid | 0/? | Not started | - |
+| 10. Session Planner Grid | 0/3 | Not started | - |
 | 11. Save & Load Sessions | 0/? | Not started | - |
 | 12. Dashboard | 0/? | Not started | - |
 | 13. Error Handling & Loading States | 0/? | Not started | - |
