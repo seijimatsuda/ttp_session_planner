@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'sonner'
 import { useAuth } from '../../contexts/AuthContext'
 
 export function LogoutButton() {
@@ -6,8 +7,13 @@ export function LogoutButton() {
   const navigate = useNavigate()
 
   const handleLogout = async () => {
-    await signOut()
-    navigate('/login')
+    try {
+      await signOut()
+      toast.success('You have been logged out')
+      navigate('/login')
+    } catch (error) {
+      toast.error('Failed to log out. Please try again.')
+    }
   }
 
   return (
