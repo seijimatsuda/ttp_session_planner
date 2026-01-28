@@ -218,10 +218,12 @@ Plans:
   3. User can load saved session to populate grid
   4. User can edit existing session (update drills and save)
   5. User can delete session with confirmation
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 11-01: TBD
+- [ ] 11-01-PLAN.md — Install Headless UI, create reusable ConfirmDialog component
+- [ ] 11-02-PLAN.md — Create SessionsPage with list, empty state, delete confirmation
+- [ ] 11-03-PLAN.md — Create SaveSessionDialog for save/edit session functionality
 
 ### Phase 12: Dashboard
 **Goal**: Logged-in users see a landing page with quick actions
@@ -310,7 +312,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 8. Drill Library | 2/2 | ✓ Complete | 2026-01-28 |
 | 9. Drill Detail & Edit | 3/3 | ✓ Complete | 2026-01-28 |
 | 10. Session Planner Grid | 0/3 | Not started | - |
-| 11. Save & Load Sessions | 0/? | Not started | - |
+| 11. Save & Load Sessions | 0/3 | Not started | - |
 | 12. Dashboard | 0/? | Not started | - |
 | 13. Error Handling & Loading States | 0/? | Not started | - |
 | 14. iOS/iPad Optimization | 0/? | Not started | - |
