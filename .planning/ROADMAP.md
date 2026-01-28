@@ -234,10 +234,11 @@ Plans:
   2. Quick actions navigate to "Add Drill" and "New Session"
   3. Dashboard shows recent sessions or drills (if any exist)
   4. Empty state guides new users to create first drill
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 12-01: TBD
+- [ ] 12-01-PLAN.md — Create QuickActions, DashboardEmptyState, RecentDrills, RecentSessions components
+- [ ] 12-02-PLAN.md — Wire DashboardPage with production implementation and verify
 
 ### Phase 13: Error Handling & Loading States
 **Goal**: Application provides clear feedback for all user actions and system states
@@ -313,7 +314,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 9. Drill Detail & Edit | 3/3 | ✓ Complete | 2026-01-28 |
 | 10. Session Planner Grid | 0/3 | Not started | - |
 | 11. Save & Load Sessions | 0/3 | Not started | - |
-| 12. Dashboard | 0/? | Not started | - |
+| 12. Dashboard | 0/2 | Not started | - |
 | 13. Error Handling & Loading States | 0/? | Not started | - |
 | 14. iOS/iPad Optimization | 0/? | Not started | - |
 | 15. Performance Optimization | 0/? | Not started | - |
