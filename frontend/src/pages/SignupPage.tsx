@@ -109,7 +109,7 @@ export default function SignupPage() {
 
         <p className="mt-6 text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <Link to="/login" className="text-blue-600 hover:underline">
+          <Link to="/login" className="inline-flex items-center min-h-11 text-blue-600 hover:underline">
             Log in
           </Link>
         </p>
