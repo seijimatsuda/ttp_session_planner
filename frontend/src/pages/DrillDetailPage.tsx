@@ -1,7 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-import { useDrill } from '@/hooks/useDrills'
+import { toast } from 'sonner'
+import { useDrill, useDeleteDrill } from '@/hooks/useDrills'
 import { DrillDetail } from '@/components/drills'
 import { AppShell } from '@/components/layout/AppShell'
 import { Button } from '@/components/ui/Button'
@@ -20,6 +21,24 @@ export function DrillDetailPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const { data: drill, isLoading, error } = useDrill(id)
+  const deleteDrill = useDeleteDrill()
+
+  const handleEdit = () => {
+    navigate(`/drills/${drill?.id}/edit`)
+  }
+
+  const handleDelete = async () => {
+    if (!drill) return
+
+    try {
+      await deleteDrill.mutateAsync(drill.id)
+      toast.success('Drill deleted successfully')
+      navigate('/drills')
+    } catch (error) {
+      toast.error('Failed to delete drill')
+      throw error // Re-throw so dialog doesn't close on error
+    }
+  }
 
   // Loading state
   if (isLoading) {
@@ -67,7 +86,12 @@ export function DrillDetailPage() {
   // Success state
   return (
     <AppShell>
-      <DrillDetail drill={drill} />
+      <DrillDetail
+        drill={drill}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
+        isDeleting={deleteDrill.isPending}
+      />
     </AppShell>
   )
 }

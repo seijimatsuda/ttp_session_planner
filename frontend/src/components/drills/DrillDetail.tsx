@@ -2,20 +2,27 @@
  * DrillDetail component - displays full drill information on detail page
  *
  * Shows drill video (with iOS-compatible playsInline), name, metadata fields,
- * and provides foundation for edit/delete actions in future plans.
+ * and provides Edit/Delete action buttons with confirmation flow.
  */
 
+import { useState } from 'react'
 import { getProxyMediaUrl } from '@/lib/media'
+import { Button } from '@/components/ui/Button'
+import { DeleteDrillDialog } from './DeleteDrillDialog'
 import type { Drill } from '@/lib/database.types'
 
 interface DrillDetailProps {
   drill: Drill
+  onEdit: () => void
+  onDelete: () => Promise<void>
+  isDeleting: boolean
 }
 
 /**
  * Full detail view for a single drill
  */
-export function DrillDetail({ drill }: DrillDetailProps) {
+export function DrillDetail({ drill, onEdit, onDelete, isDeleting }: DrillDetailProps) {
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
       {/* Drill name heading */}
@@ -105,6 +112,30 @@ export function DrillDetail({ drill }: DrillDetailProps) {
           </div>
         )}
       </div>
+
+      {/* Action buttons */}
+      <div className="flex gap-3 mt-8 pt-6 border-t border-gray-200">
+        <Button onClick={onEdit}>Edit Drill</Button>
+        <Button
+          variant="danger"
+          onClick={() => setIsDeleteDialogOpen(true)}
+          disabled={isDeleting}
+        >
+          Delete Drill
+        </Button>
+      </div>
+
+      {/* Delete confirmation dialog */}
+      <DeleteDrillDialog
+        isOpen={isDeleteDialogOpen}
+        onClose={() => setIsDeleteDialogOpen(false)}
+        onConfirm={async () => {
+          await onDelete()
+          setIsDeleteDialogOpen(false)
+        }}
+        drillName={drill.name}
+        isDeleting={isDeleting}
+      />
     </div>
   )
 }
