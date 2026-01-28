@@ -5,6 +5,7 @@ import SignupPage from './pages/SignupPage'
 import DashboardPage from './pages/DashboardPage'
 import { AddDrillPage } from './pages/AddDrillPage'
 import { DrillLibraryPage } from './pages/DrillLibraryPage'
+import { DrillDetailPage } from './pages/DrillDetailPage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
           {/* Drill routes */}
           <Route path="/drills/new" element={<AddDrillPage />} />
+          <Route path="/drills/:id" element={<DrillDetailPage />} />
           <Route path="/drills" element={<DrillLibraryPage />} />
 
           {/* Add more protected routes here as features are built */}
