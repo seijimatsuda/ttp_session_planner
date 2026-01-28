@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 9 of 16 (Drill Detail & Edit)
-Plan: 0 of 3 in current phase
-Status: Ready to start
-Last activity: 2026-01-28 — Completed Phase 8 (Drill Library)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-28 — Completed 09-01-PLAN.md
 
-Progress: [█████░░░░░] 50% (8/16 phases completed, 27/48 plans completed)
+Progress: [█████░░░░░] 58% (8/16 phases completed, 28/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 27
+- Total plans completed: 28
 - Average duration: 4.2min
-- Total execution time: 1.93 hours
+- Total execution time: 2.0 hours
 
 **By Phase:**
 
@@ -35,10 +35,11 @@ Progress: [█████░░░░░] 50% (8/16 phases completed, 27/48 pla
 | 06-core-ui-components | 4 | 41min | 10.3min |
 | 07-add-drill-feature | 3 | 10min | 3.3min |
 | 08-drill-library | 2 | 3.8min | 1.9min |
+| 09-drill-detail-edit | 1 | 4min | 4min |
 
 **Recent Trend:**
-- Last 5 plans: 07-02 (6min), 07-03 (3min), 08-01 (1.6min), 08-02 (2.2min)
-- Trend: Phase 8 complete - drill library fully functional
+- Last 5 plans: 07-03 (3min), 08-01 (1.6min), 08-02 (2.2min), 09-01 (4min)
+- Trend: Phase 9 started - drill detail page with iOS video support
 
 *Updated after each plan completion*
 
@@ -121,6 +122,10 @@ Recent decisions affecting current work:
 - Search uses debounced value (300ms) but category is instant for better UX (08-02)
 - Grid shows 8 skeleton cards during loading for consistent layout (08-02)
 - Responsive grid breakpoints: md:2col, lg:3col, xl:4col (08-02)
+- Headless UI installed early for future delete dialog (09-01)
+- playsInline (capital I) attribute for iOS video inline playback (09-01)
+- Route /drills/:id placed after /drills/new for correct specificity (09-01)
+- Detail page pattern: useParams → hook → loading/error/success states (09-01)
 
 ### Pending Todos
 
@@ -133,7 +138,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 08-02-PLAN.md (Phase 8 complete)
+Stopped at: Completed 09-01-PLAN.md
 Resume file: None
 
 ## Production URLs
