@@ -65,6 +65,7 @@ export function useSessionGrid(options: UseSessionGridOptions = {}) {
 
   return {
     gridData,
+    setGridData,
     selectedDrillId,
     placeDrill,
     removeDrill,
