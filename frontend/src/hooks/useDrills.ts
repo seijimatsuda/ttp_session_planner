@@ -44,6 +44,8 @@ export function useDrills(userId: string | undefined) {
     queryKey: drillKeys.list(userId ?? ''),
     queryFn: () => getDrillsByUser(client, userId!),
     enabled: !!userId,
+    staleTime: 5 * 60 * 1000, // 5 minutes - drills change infrequently
+    gcTime: 10 * 60 * 1000, // 10 minutes - keep in cache longer for quick returns
   })
 }
 
@@ -57,6 +59,8 @@ export function useDrill(id: string | undefined) {
     queryKey: drillKeys.detail(id ?? ''),
     queryFn: () => getDrillById(client, id!),
     enabled: !!id,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+    gcTime: 10 * 60 * 1000, // 10 minutes
   })
 }
 
