@@ -183,10 +183,12 @@ Plans:
   2. User can edit any field of existing drill
   3. User can delete drill with confirmation dialog
   4. Media playback works in detail view with iOS compatibility
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 09-01: TBD
+- [ ] 09-01-PLAN.md — Detail page with media playback and skeleton loading states
+- [ ] 09-02-PLAN.md — Make DrillForm reusable for edit mode, create EditDrillPage
+- [ ] 09-03-PLAN.md — Delete functionality with accessible confirmation dialog
 
 ### Phase 10: Session Planner Grid
 **Goal**: Users can arrange drills in 4x3 grid via drag-and-drop or click
