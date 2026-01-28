@@ -26,6 +26,9 @@ export function DrillCard({ drill }: DrillCardProps) {
             <img
               src={getProxyMediaUrl('drills', drill.video_file_path)}
               alt=""
+              loading="lazy"
+              width="320"
+              height="180"
               className="w-full h-full object-cover"
             />
           ) : (
