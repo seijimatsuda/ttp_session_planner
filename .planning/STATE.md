@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 7 of 16 (Add Drill Feature)
-Plan: 0 of 3 in current phase
-Status: Ready to start
-Last activity: 2026-01-27 — Completed Phase 6 (Core UI Components)
+Plan: 1 of 3 in current phase
+Status: In progress
+Last activity: 2026-01-28 — Completed 07-01-PLAN.md (Foundation Artifacts)
 
-Progress: [████░░░░░░] 46% (6/16 phases completed, 22/48 plans completed)
+Progress: [████░░░░░░] 48% (6/16 phases completed, 23/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 22
-- Average duration: 4.5min
-- Total execution time: 1.65 hours
+- Total plans completed: 23
+- Average duration: 4.4min
+- Total execution time: 1.68 hours
 
 **By Phase:**
 
@@ -33,10 +33,11 @@ Progress: [████░░░░░░] 46% (6/16 phases completed, 22/48 pla
 | 04-supabase-storage-media-upload | 3 | 9min | 3min |
 | 05-ios-media-proxy | 2 | 5min | 2.5min |
 | 06-core-ui-components | 4 | 41min | 10.3min |
+| 07-add-drill-feature | 1 | 1min | 1min |
 
 **Recent Trend:**
-- Last 5 plans: 06-01 (3min), 06-03 (2min), 06-02 (6min), 06-04 (30min)
-- Trend: 06-04 included human checkpoint verification time
+- Last 5 plans: 06-03 (2min), 06-02 (6min), 06-04 (30min), 07-01 (1min)
+- Trend: 07-01 fastest plan yet (foundation artifacts only)
 
 *Updated after each plan completion*
 
@@ -103,6 +104,9 @@ Recent decisions affecting current work:
 - @/* path alias configured in tsconfig.app.json and vite.config.ts (06-02)
 - Provider hierarchy: AppErrorBoundary > SkeletonProvider > App > Toaster (06-04)
 - Page layout pattern: AppShell with sidebar/header props, Container for content (06-04)
+- Custom Zod transform for num_players to avoid z.coerce.number() pitfall (converts empty string to 0) (07-01)
+- TagInput keyboard shortcuts: Enter/Tab to add, Backspace on empty to remove last (07-01)
+- DRILL_CATEGORIES const array matches database CHECK constraint values (07-01)
 
 ### Pending Todos
 
@@ -115,7 +119,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-28
-Stopped at: Completed 06-04-PLAN.md (App Integration) - Phase 6 complete
+Stopped at: Completed 07-01-PLAN.md (Foundation Artifacts)
 Resume file: None
 
 ## Production URLs
