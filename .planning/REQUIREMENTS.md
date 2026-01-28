@@ -33,9 +33,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Drills
 
-- [ ] **DRILL-01**: User can add drill with name and category (required)
-- [ ] **DRILL-02**: User can add drill with media upload
-- [ ] **DRILL-03**: User can add drill metadata (num_players, equipment, tags, reference URL)
+- [x] **DRILL-01**: User can add drill with name and category (required)
+- [x] **DRILL-02**: User can add drill with media upload
+- [x] **DRILL-03**: User can add drill metadata (num_players, equipment, tags, reference URL)
 - [ ] **DRILL-04**: User can view drill library in responsive grid
 - [ ] **DRILL-05**: User can search drills by name
 - [ ] **DRILL-06**: User can filter drills by category
@@ -124,9 +124,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MEDIA-04 | Phase 5 | Complete |
 | MEDIA-05 | Phase 5 | Complete |
 | MEDIA-06 | Phase 4 | Complete |
-| DRILL-01 | Phase 7 | Pending |
-| DRILL-02 | Phase 7 | Pending |
-| DRILL-03 | Phase 7 | Pending |
+| DRILL-01 | Phase 7 | Complete |
+| DRILL-02 | Phase 7 | Complete |
+| DRILL-03 | Phase 7 | Complete |
 | DRILL-04 | Phase 8 | Pending |
 | DRILL-05 | Phase 8 | Pending |
 | DRILL-06 | Phase 8 | Pending |
@@ -157,4 +157,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-22*
-*Last updated: 2026-01-22 after roadmap creation*
+*Last updated: 2026-01-28 after Phase 7 completion*

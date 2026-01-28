@@ -29,7 +29,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 ### Milestone 2: Core Features
 
-- [ ] **Phase 7: Add Drill Feature** - Create new drills with metadata and media
+- [x] **Phase 7: Add Drill Feature** - Create new drills with metadata and media
 - [ ] **Phase 8: Drill Library** - Grid view with search and category filtering
 - [ ] **Phase 9: Drill Detail & Edit** - View full drill details, edit, delete
 - [ ] **Phase 10: Session Planner Grid** - 4x3 drag-and-drop grid for session planning
@@ -156,9 +156,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 07-01-PLAN.md — Create Zod schema, types, defaults, and TagInput component
-- [ ] 07-02-PLAN.md — Create DrillForm with MediaUpload integration and AddDrillPage with routing
-- [ ] 07-03-PLAN.md — Verify complete drill creation flow end-to-end
+- [x] 07-01-PLAN.md — Create Zod schema, types, defaults, and TagInput component
+- [x] 07-02-PLAN.md — Create DrillForm with MediaUpload integration and AddDrillPage with routing
+- [x] 07-03-PLAN.md — Verify complete drill creation flow end-to-end
 
 ### Phase 8: Drill Library
 **Goal**: Users can browse, search, and filter their drill collection
@@ -301,7 +301,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 4. Supabase Storage & Media Upload | 3/3 | ✓ Complete | 2026-01-27 |
 | 5. iOS Media Proxy | 2/2 | ✓ Complete | 2026-01-27 |
 | 6. Core UI Components | 4/4 | ✓ Complete | 2026-01-27 |
-| 7. Add Drill Feature | 0/3 | Planned | - |
+| 7. Add Drill Feature | 3/3 | ✓ Complete | 2026-01-28 |
 | 8. Drill Library | 0/? | Not started | - |
 | 9. Drill Detail & Edit | 0/? | Not started | - |
 | 10. Session Planner Grid | 0/? | Not started | - |
