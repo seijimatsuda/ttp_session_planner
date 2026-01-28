@@ -2,6 +2,7 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { toast } from 'sonner'
 import { useMediaUpload } from '../hooks/useMediaUpload'
 import { deleteFile, getSignedUrl } from '../lib/storage'
+import { getProxyMediaUrl } from '../lib/media'
 import { ALLOWED_MIME_TYPES, MAX_FILE_SIZE, type MediaType } from '../types/media'
 
 interface MediaUploadProps {
@@ -206,11 +207,12 @@ export function MediaUpload({
               className="max-h-48 mx-auto rounded"
             />
           )}
-          {previewUrl && mediaType === 'video' && (
+          {uploadedFilePath && mediaType === 'video' && (
             <video
-              src={previewUrl}
+              src={getProxyMediaUrl('drills', uploadedFilePath)}
               controls
               playsInline
+              preload="metadata"
               className="max-h-48 mx-auto rounded"
             >
               Your browser does not support video playback.
