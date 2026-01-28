@@ -28,7 +28,8 @@ function App() {
           <Route path="/drills/:id" element={<DrillDetailPage />} />
           <Route path="/drills" element={<DrillLibraryPage />} />
 
-          {/* Session routes */}
+          {/* Session routes - most specific first */}
+          <Route path="/sessions/:id/edit" element={<SessionPlannerPage />} />
           <Route path="/sessions/new" element={<SessionPlannerPage />} />
           <Route path="/sessions" element={<SessionsPage />} />
 
