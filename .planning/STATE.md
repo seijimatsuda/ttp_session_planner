@@ -10,16 +10,16 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 14 of 16 (iOS/iPad Optimization)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 11-04-PLAN.md (Save/Load/Edit Integration - Gap Closure)
+Last activity: 2026-01-28 — Completed 14-02-PLAN.md (iOS/iPad Media Verification)
 
-Progress: [████████░░] 83% (13/16 phases completed, 41/48 plans completed)
+Progress: [████████░░] 85% (13/16 phases completed, 42/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 41
+- Total plans completed: 42
 - Average duration: 3.6min
 - Total execution time: 2.5 hours
 
@@ -40,11 +40,11 @@ Progress: [████████░░] 83% (13/16 phases completed, 41/48 pl
 | 11-save-load-sessions | 4 | 12.4min | 3.1min |
 | 12-dashboard | 2 | 4min | 2min |
 | 13-error-handling-loading-states | 2 | 3.7min | 1.85min |
-| 14-ios-ipad-optimization | 1 | 5.4min | 5.4min |
+| 14-ios-ipad-optimization | 2 | 10.4min | 5.2min |
 
 **Recent Trend:**
-- Last 5 plans: 11-02 (8.4min), 12-01 (2min), 12-02 (2min), 14-01 (5.4min), 11-04 (3min)
-- Trend: Phase 11 gap closure complete - save/load/edit integration working
+- Last 5 plans: 12-01 (2min), 12-02 (2min), 14-01 (5.4min), 11-04 (3min), 14-02 (5min)
+- Trend: Phase 14 iOS/iPad optimization in progress - video verification complete
 
 *Updated after each plan completion*
 
@@ -177,6 +177,8 @@ Recent decisions affecting current work:
 - Tailwind min-h-11 (44px) for iOS touch target compliance across all interactive elements (14-01)
 - Negative margins (-mr-2) compensate for 44px touch targets in tight layouts like tag lists (14-01)
 - inline-flex items-center min-h-11 pattern for inline link touch targets (maintains text flow) (14-01)
+- MediaUpload video preview uses getProxyMediaUrl for iOS Range request compatibility (14-02)
+- Image previews continue using signed URLs (no Range requests needed) (14-02)
 - After saving new session, navigate to /sessions/:id/edit so subsequent saves update instead of creating duplicates (11-04)
 - Double cast (as unknown as GridData) for Json to GridData type conversion due to Supabase type system (11-04)
 - useEffect to update grid when session data loads asynchronously (11-04)
@@ -192,7 +194,7 @@ None currently.
 ## Session Continuity
 
 Last session: 2026-01-28T08:22:47Z
-Stopped at: Completed 11-04-PLAN.md (Save/Load/Edit Integration - Gap Closure)
+Stopped at: Completed 14-02-PLAN.md (iOS/iPad Media Verification)
 Resume file: None
 
 ## Production URLs
