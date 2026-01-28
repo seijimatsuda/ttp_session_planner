@@ -1,18 +1,23 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ProtectedRoute } from './components/auth/ProtectedRoute'
-import LoginPage from './pages/LoginPage'
-import SignupPage from './pages/SignupPage'
-import DashboardPage from './pages/DashboardPage'
-import { AddDrillPage } from './pages/AddDrillPage'
-import { DrillLibraryPage } from './pages/DrillLibraryPage'
-import { DrillDetailPage } from './pages/DrillDetailPage'
-import { EditDrillPage } from './pages/EditDrillPage'
-import { SessionPlannerPage } from './pages/SessionPlannerPage'
-import { SessionsPage } from './pages/SessionsPage'
+import { LoadingPage } from './components/layout/LoadingPage'
+
+// Lazy-loaded page components for code splitting
+const LoginPage = lazy(() => import('./pages/LoginPage'))
+const SignupPage = lazy(() => import('./pages/SignupPage'))
+const DashboardPage = lazy(() => import('./pages/DashboardPage'))
+const AddDrillPage = lazy(() => import('./pages/AddDrillPage').then(m => ({ default: m.AddDrillPage })))
+const DrillLibraryPage = lazy(() => import('./pages/DrillLibraryPage').then(m => ({ default: m.DrillLibraryPage })))
+const DrillDetailPage = lazy(() => import('./pages/DrillDetailPage').then(m => ({ default: m.DrillDetailPage })))
+const EditDrillPage = lazy(() => import('./pages/EditDrillPage').then(m => ({ default: m.EditDrillPage })))
+const SessionPlannerPage = lazy(() => import('./pages/SessionPlannerPage').then(m => ({ default: m.SessionPlannerPage })))
+const SessionsPage = lazy(() => import('./pages/SessionsPage').then(m => ({ default: m.SessionsPage })))
 
 function App() {
   return (
     <BrowserRouter>
+      <Suspense fallback={<LoadingPage />}>
       <Routes>
         {/* Public routes */}
         <Route path="/login" element={<LoginPage />} />
@@ -39,6 +44,7 @@ function App() {
         {/* Catch-all redirect */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      </Suspense>
     </BrowserRouter>
   )
 }
