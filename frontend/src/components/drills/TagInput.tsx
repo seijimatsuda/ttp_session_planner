@@ -103,8 +103,7 @@ export function TagInput({
             <button
               type="button"
               onClick={() => removeTag(index)}
-              className="flex items-center justify-center rounded-sm hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              style={{ minWidth: "20px", minHeight: "20px" }}
+              className="min-h-11 min-w-11 flex items-center justify-center rounded-sm hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 -mr-2"
               aria-label={`Remove ${tag}`}
             >
               <svg
