@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import SignupPage from './pages/SignupPage'
 import DashboardPage from './pages/DashboardPage'
 import { AddDrillPage } from './pages/AddDrillPage'
+import { DrillLibraryPage } from './pages/DrillLibraryPage'
 
 function App() {
   return (
@@ -19,19 +20,7 @@ function App() {
 
           {/* Drill routes */}
           <Route path="/drills/new" element={<AddDrillPage />} />
-          <Route
-            path="/drills"
-            element={
-              <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                    Drill Library
-                  </h1>
-                  <p className="text-gray-600">Coming in Phase 8</p>
-                </div>
-              </div>
-            }
-          />
+          <Route path="/drills" element={<DrillLibraryPage />} />
 
           {/* Add more protected routes here as features are built */}
         </Route>

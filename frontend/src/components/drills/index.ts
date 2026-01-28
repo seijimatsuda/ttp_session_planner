@@ -7,3 +7,5 @@ export * from "./TagInput";
 export * from "./DrillForm";
 export { DrillCard } from "./DrillCard";
 export { DrillEmptyState } from "./DrillEmptyState";
+export { DrillFilters } from './DrillFilters';
+export { DrillGrid } from './DrillGrid';
