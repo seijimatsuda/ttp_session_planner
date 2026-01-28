@@ -39,7 +39,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 ### Milestone 3: Polish & Production
 
 - [x] **Phase 13: Error Handling & Loading States** - Toast notifications, skeletons, user-friendly errors
-- [ ] **Phase 14: iOS/iPad Optimization** - Touch targets, drag-and-drop, video playback testing
+- [x] **Phase 14: iOS/iPad Optimization** - Touch targets, drag-and-drop, video playback testing
 - [ ] **Phase 15: Performance Optimization** - Query caching, image optimization, lazy loading
 - [ ] **Phase 16: Final Testing & Launch** - Cross-browser testing, deployment verification
 
@@ -269,8 +269,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 14-01-PLAN.md — Fix touch targets on TagInput, MediaUpload, and auth page links
-- [ ] 14-02-PLAN.md — Update MediaUpload video preview to use proxy URL, iOS device verification
+- [x] 14-01-PLAN.md — Fix touch targets on TagInput, MediaUpload, and auth page links
+- [x] 14-02-PLAN.md — Update MediaUpload video preview to use proxy URL, iOS device verification
 
 ### Phase 15: Performance Optimization
 **Goal**: Application loads quickly and responds instantly on all target devices
@@ -325,6 +325,6 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 11. Save & Load Sessions | 4/4 | ✓ Complete | 2026-01-28 |
 | 12. Dashboard | 2/2 | ✓ Complete | 2026-01-28 |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
-| 14. iOS/iPad Optimization | 0/2 | Not started | - |
+| 14. iOS/iPad Optimization | 2/2 | ✓ Complete | 2026-01-28 |
 | 15. Performance Optimization | 0/3 | Not started | - |
 | 16. Final Testing & Launch | 0/4 | Not started | - |
