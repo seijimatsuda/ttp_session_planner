@@ -224,7 +224,7 @@ Plans:
 - [x] 11-01-PLAN.md — Install Headless UI, create reusable ConfirmDialog component
 - [x] 11-02-PLAN.md — Create SessionsPage with list, empty state, delete confirmation
 - [x] 11-03-PLAN.md — Create SaveSessionDialog for save/edit session functionality
-- [ ] 11-04-PLAN.md — Wire save/load/edit integration into SessionPlannerPage (gap closure)
+- [x] 11-04-PLAN.md — Wire save/load/edit integration into SessionPlannerPage (gap closure)
 
 ### Phase 12: Dashboard
 **Goal**: Logged-in users see a landing page with quick actions
@@ -322,7 +322,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 8. Drill Library | 2/2 | ✓ Complete | 2026-01-28 |
 | 9. Drill Detail & Edit | 3/3 | ✓ Complete | 2026-01-28 |
 | 10. Session Planner Grid | 3/3 | ✓ Complete | 2026-01-28 |
-| 11. Save & Load Sessions | 3/4 | Gap closure | - |
+| 11. Save & Load Sessions | 4/4 | ✓ Complete | 2026-01-28 |
 | 12. Dashboard | 2/2 | ✓ Complete | 2026-01-28 |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
 | 14. iOS/iPad Optimization | 0/2 | Not started | - |

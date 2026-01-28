@@ -50,11 +50,11 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **SESS-03**: User can drag drills into grid cells (iPad touch)
 - [x] **SESS-04**: User can click to add drill to grid cell (alternative to drag)
 - [x] **SESS-05**: User can remove drill from grid cell
-- [ ] **SESS-06**: User can save session with name
-- [ ] **SESS-07**: User can view list of saved sessions
-- [ ] **SESS-08**: User can load and view saved session
-- [ ] **SESS-09**: User can edit existing session
-- [ ] **SESS-10**: User can delete session
+- [x] **SESS-06**: User can save session with name
+- [x] **SESS-07**: User can view list of saved sessions
+- [x] **SESS-08**: User can load and view saved session
+- [x] **SESS-09**: User can edit existing session
+- [x] **SESS-10**: User can delete session
 
 ### UI & Polish
 
@@ -138,11 +138,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SESS-03 | Phase 10 | Complete |
 | SESS-04 | Phase 10 | Complete |
 | SESS-05 | Phase 10 | Complete |
-| SESS-06 | Phase 11 | Pending |
-| SESS-07 | Phase 11 | Pending |
-| SESS-08 | Phase 11 | Pending |
-| SESS-09 | Phase 11 | Pending |
-| SESS-10 | Phase 11 | Pending |
+| SESS-06 | Phase 11 | Complete |
+| SESS-07 | Phase 11 | Complete |
+| SESS-08 | Phase 11 | Complete |
+| SESS-09 | Phase 11 | Complete |
+| SESS-10 | Phase 11 | Complete |
 | UI-01 | Phase 6 | Complete |
 | UI-02 | Phase 6 | Complete |
 | UI-03 | Phase 6 | Complete |
