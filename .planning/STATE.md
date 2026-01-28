@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 ## Current Position
 
 Phase: 10 of 16 (Session Planner Grid)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 10-01-PLAN.md
+Last activity: 2026-01-27 — Completed 10-02-PLAN.md
 
-Progress: [██████░░░░] 58% (9/16 phases completed, 31/48 plans completed)
+Progress: [██████░░░░] 60% (9/16 phases completed, 32/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 31
-- Average duration: 4.0min
-- Total execution time: 2.1 hours
+- Total plans completed: 32
+- Average duration: 4.1min
+- Total execution time: 2.2 hours
 
 **By Phase:**
 
@@ -36,11 +36,11 @@ Progress: [██████░░░░] 58% (9/16 phases completed, 31/48 pla
 | 07-add-drill-feature | 3 | 10min | 3.3min |
 | 08-drill-library | 2 | 3.8min | 1.9min |
 | 09-drill-detail-edit | 2 | 7.7min | 3.9min |
-| 10-session-planner-grid | 1 | 3min | 3min |
+| 10-session-planner-grid | 2 | 11min | 5.5min |
 
 **Recent Trend:**
-- Last 5 plans: 08-02 (2.2min), 09-01 (4min), 09-02 (3.7min), 09-03 (4min), 10-01 (3min)
-- Trend: Phase 10 in progress - session planner grid foundation
+- Last 5 plans: 09-01 (4min), 09-02 (3.7min), 09-03 (4min), 10-01 (3min), 10-02 (8min)
+- Trend: Phase 10 in progress - session planner grid components
 
 *Updated after each plan completion*
 
@@ -140,6 +140,11 @@ Recent decisions affecting current work:
 - Session grid structure: 4 rows (drill categories) x 3 columns (sequential slots) = 12 cells (10-01)
 - Cell keys follow template literal pattern: 'rowKey-colIndex' (e.g., 'activation-0') (10-01)
 - Grid state management is local-only in Phase 10; Supabase persistence deferred to Phase 11 (10-01)
+- GridCell onClick handler supports click-to-place mode for non-drag interactions (10-02)
+- DraggableDrillCard shows num_players badge when available for quick drill reference (10-02)
+- SessionGrid uses CSS grid template grid-cols-[auto_repeat(3,1fr)] for flexible row labels + fixed 3 columns (10-02)
+- DrillLibrarySidebar includes instruction text for both drag-and-drop and click-to-place interactions (10-02)
+- Remove button uses e.stopPropagation() to prevent cell onClick when removing drills (10-02)
 
 ### Pending Todos
 
@@ -151,8 +156,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28 02:51:54 UTC
-Stopped at: Completed 10-01-PLAN.md
+Last session: 2026-01-27T23:10:59Z
+Stopped at: Completed 10-02-PLAN.md
 Resume file: None
 
 ## Production URLs
