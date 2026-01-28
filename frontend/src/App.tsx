@@ -8,6 +8,7 @@ import { DrillLibraryPage } from './pages/DrillLibraryPage'
 import { DrillDetailPage } from './pages/DrillDetailPage'
 import { EditDrillPage } from './pages/EditDrillPage'
 import { SessionPlannerPage } from './pages/SessionPlannerPage'
+import { SessionsPage } from './pages/SessionsPage'
 
 function App() {
   return (
@@ -29,19 +30,7 @@ function App() {
 
           {/* Session routes */}
           <Route path="/sessions/new" element={<SessionPlannerPage />} />
-          <Route
-            path="/sessions"
-            element={
-              <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-center">
-                  <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                    My Sessions
-                  </h1>
-                  <p className="text-gray-600">Coming in Phase 11</p>
-                </div>
-              </div>
-            }
-          />
+          <Route path="/sessions" element={<SessionsPage />} />
 
           {/* Add more protected routes here as features are built */}
         </Route>
