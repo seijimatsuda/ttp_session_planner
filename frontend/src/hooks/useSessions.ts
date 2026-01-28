@@ -38,6 +38,8 @@ export function useSessions(userId: string | undefined) {
     queryKey: sessionKeys.list(userId ?? ''),
     queryFn: () => getSessionsByUser(client, userId!),
     enabled: !!userId,
+    staleTime: 2 * 60 * 1000, // 2 minutes - sessions change more frequently than drills
+    gcTime: 5 * 60 * 1000, // 5 minutes
   })
 }
 
@@ -51,6 +53,8 @@ export function useSession(id: string | undefined) {
     queryKey: sessionKeys.detail(id ?? ''),
     queryFn: () => getSessionById(client, id!),
     enabled: !!id,
+    staleTime: 1 * 60 * 1000, // 1 minute - single session may change during editing
+    gcTime: 5 * 60 * 1000, // 5 minutes
   })
 }
 
