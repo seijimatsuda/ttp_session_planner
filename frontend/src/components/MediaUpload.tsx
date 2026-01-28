@@ -155,7 +155,7 @@ export function MediaUpload({
             <span className="text-sm font-medium text-gray-700">Uploading...</span>
             <button
               onClick={handleCancel}
-              className="text-sm text-red-600 hover:text-red-800 font-medium"
+              className="min-h-11 px-3 text-sm text-red-600 hover:text-red-800 font-medium"
               type="button"
             >
               Cancel
@@ -180,7 +180,7 @@ export function MediaUpload({
           <p className="text-sm text-red-700">{error}</p>
           <button
             onClick={reset}
-            className="mt-2 text-sm text-red-600 hover:text-red-800 font-medium"
+            className="mt-2 min-h-11 px-3 text-sm text-red-600 hover:text-red-800 font-medium"
             type="button"
           >
             Try again
@@ -225,7 +225,7 @@ export function MediaUpload({
             <button
               onClick={handleDelete}
               disabled={isDeleting}
-              className="text-sm text-red-600 hover:text-red-800 font-medium disabled:opacity-50"
+              className="min-h-11 px-3 text-sm text-red-600 hover:text-red-800 font-medium disabled:opacity-50"
               type="button"
             >
               {isDeleting ? 'Deleting...' : 'Delete'}
