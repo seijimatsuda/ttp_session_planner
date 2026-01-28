@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-01-22)
 
 ## Current Position
 
-Phase: 14 of 16 (iOS/iPad Optimization)
+Phase: 15 of 16 (Performance Optimization)
 Plan: 2 of 3 in current phase
 Status: In progress
-Last activity: 2026-01-28 — Completed 14-02-PLAN.md (iOS/iPad Media Verification)
+Last activity: 2026-01-28 — Completed 15-02-PLAN.md (Image Lazy Loading and Query Cache)
 
-Progress: [████████░░] 85% (13/16 phases completed, 42/48 plans completed)
+Progress: [████████░░] 90% (14/16 phases completed, 44/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 42
-- Average duration: 3.6min
-- Total execution time: 2.5 hours
+- Total plans completed: 44
+- Average duration: 3.5min
+- Total execution time: 2.6 hours
 
 **By Phase:**
 
@@ -41,10 +41,11 @@ Progress: [████████░░] 85% (13/16 phases completed, 42/48 pl
 | 12-dashboard | 2 | 4min | 2min |
 | 13-error-handling-loading-states | 2 | 3.7min | 1.85min |
 | 14-ios-ipad-optimization | 2 | 10.4min | 5.2min |
+| 15-performance-optimization | 2 | 6min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 12-01 (2min), 12-02 (2min), 14-01 (5.4min), 11-04 (3min), 14-02 (5min)
-- Trend: Phase 14 iOS/iPad optimization in progress - video verification complete
+- Last 5 plans: 14-01 (5.4min), 11-04 (3min), 14-02 (5min), 15-01 (3min), 15-02 (3min)
+- Trend: Phase 15 performance optimization in progress - image lazy loading and query caching complete
 
 *Updated after each plan completion*
 
@@ -182,6 +183,11 @@ Recent decisions affecting current work:
 - After saving new session, navigate to /sessions/:id/edit so subsequent saves update instead of creating duplicates (11-04)
 - Double cast (as unknown as GridData) for Json to GridData type conversion due to Supabase type system (11-04)
 - useEffect to update grid when session data loads asynchronously (11-04)
+- 5-minute staleTime for drills - change infrequently, safe to cache longer (15-02)
+- 2-minute staleTime for session list - change more frequently during active planning (15-02)
+- 1-minute staleTime for single session - may change during editing scenarios (15-02)
+- Explicit width/height (320x180) on images for 16:9 aspect ratio, prevents CLS (15-02)
+- loading="lazy" on below-fold images for bandwidth reduction (15-02)
 
 ### Pending Todos
 
@@ -193,8 +199,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28T08:22:47Z
-Stopped at: Completed 14-02-PLAN.md (iOS/iPad Media Verification)
+Last session: 2026-01-28T08:28:00Z
+Stopped at: Completed 15-02-PLAN.md (Image Lazy Loading and Query Cache)
 Resume file: None
 
 ## Production URLs
