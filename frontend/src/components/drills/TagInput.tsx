@@ -1,4 +1,4 @@
-import React, { useState, useRef, KeyboardEvent } from "react";
+import { useState, useRef, type KeyboardEvent } from "react";
 import { cn } from "@/lib/utils";
 
 export interface TagInputProps {

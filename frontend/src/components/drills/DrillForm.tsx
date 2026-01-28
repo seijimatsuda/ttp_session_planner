@@ -67,6 +67,7 @@ export function DrillForm({ onSuccess }: DrillFormProps) {
         user_id: user.id,
         creator_email: user.email!,
         video_file_path: mediaFilePath,
+        video_url: data.video_url || null, // Convert empty string to null
       };
 
       const newDrill = await createDrill.mutateAsync(drillData);
@@ -148,7 +149,7 @@ export function DrillForm({ onSuccess }: DrillFormProps) {
 
       {/* Number of Players (optional) */}
       <Input
-        {...register("num_players")}
+        {...register("num_players", { valueAsNumber: true })}
         label="Number of Players (optional)"
         type="number"
         placeholder="e.g., 6"

@@ -17,9 +17,9 @@ export type DrillCategory = (typeof DRILL_CATEGORIES)[number];
  *
  * Key features:
  * - Required: name (1-100 chars), category (enum)
- * - Optional with transforms: num_players (string to number), video_url (empty string to null)
- * - Array defaults: equipment, tags
- * - Custom num_players transform to avoid z.coerce.number() pitfall (converts empty string to 0)
+ * - Optional: num_players (number), video_url, equipment, tags
+ * - Arrays default to empty
+ * - Custom num_players preprocessing to avoid z.coerce.number() pitfall
  */
 export const drillFormSchema = z.object({
   name: z
@@ -27,31 +27,12 @@ export const drillFormSchema = z.object({
     .min(1, "Drill name is required")
     .max(100, "Drill name must be 100 characters or less"),
   category: z.enum(DRILL_CATEGORIES, {
-    errorMap: () => ({ message: "Please select a category" }),
+    message: "Please select a category",
   }),
-  num_players: z
-    .union([z.string(), z.number(), z.undefined()])
-    .transform((val) => {
-      // Transform empty string, undefined, or "" to undefined
-      if (val === "" || val === undefined || val === null) {
-        return undefined;
-      }
-      // If already a number, return it
-      if (typeof val === "number") {
-        return val;
-      }
-      // Parse string to number
-      const parsed = parseInt(val, 10);
-      return isNaN(parsed) ? undefined : parsed;
-    })
-    .pipe(z.number().int().min(1).max(30).optional()),
-  equipment: z.array(z.string()).default([]),
-  tags: z.array(z.string()).default([]),
-  video_url: z
-    .string()
-    .transform((val) => (val === "" ? null : val))
-    .nullable()
-    .optional(),
+  num_players: z.number().int().min(1).max(30).optional(),
+  equipment: z.array(z.string()),
+  tags: z.array(z.string()),
+  video_url: z.string().optional().nullable(),
 });
 
 export type DrillFormData = z.infer<typeof drillFormSchema>;
@@ -65,5 +46,5 @@ export const drillFormDefaults: DrillFormData = {
   num_players: undefined,
   equipment: [],
   tags: [],
-  video_url: null,
+  video_url: "",
 };
