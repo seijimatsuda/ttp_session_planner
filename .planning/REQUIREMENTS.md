@@ -63,7 +63,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **UI-03**: Loading states with skeletons (no jarring flashes)
 - [x] **UI-04**: Toast notifications for success/error feedback
 - [x] **UI-05**: User-friendly error messages
-- [ ] **UI-06**: Dashboard with quick actions after login
+- [x] **UI-06**: Dashboard with quick actions after login
 
 ## v2 Requirements
 
@@ -148,7 +148,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UI-03 | Phase 6 | Complete |
 | UI-04 | Phase 6 | Complete |
 | UI-05 | Phase 6 | Complete |
-| UI-06 | Phase 12 | Pending |
+| UI-06 | Phase 12 | Complete |
 
 **Coverage:**
 - v1 requirements: 35 total

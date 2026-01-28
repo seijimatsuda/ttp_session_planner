@@ -34,7 +34,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 9: Drill Detail & Edit** - View full drill details, edit, delete
 - [x] **Phase 10: Session Planner Grid** - 4x3 drag-and-drop grid for session planning
 - [ ] **Phase 11: Save & Load Sessions** - Persist and retrieve session configurations
-- [ ] **Phase 12: Dashboard** - Landing page with quick actions after login
+- [x] **Phase 12: Dashboard** - Landing page with quick actions after login
 
 ### Milestone 3: Polish & Production
 
@@ -238,8 +238,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 12-01-PLAN.md — Create QuickActions, DashboardEmptyState, RecentDrills, RecentSessions components
-- [ ] 12-02-PLAN.md — Wire DashboardPage with production implementation and verify
+- [x] 12-01-PLAN.md — Create QuickActions, DashboardEmptyState, RecentDrills, RecentSessions components
+- [x] 12-02-PLAN.md — Wire DashboardPage with production implementation and verify
 
 ### Phase 13: Error Handling & Loading States
 **Goal**: Application provides clear feedback for all user actions and system states
@@ -321,7 +321,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 9. Drill Detail & Edit | 3/3 | ✓ Complete | 2026-01-28 |
 | 10. Session Planner Grid | 3/3 | ✓ Complete | 2026-01-28 |
 | 11. Save & Load Sessions | 3/4 | Gap closure | - |
-| 12. Dashboard | 0/2 | Not started | - |
+| 12. Dashboard | 2/2 | ✓ Complete | 2026-01-28 |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
 | 14. iOS/iPad Optimization | 0/2 | Not started | - |
 | 15. Performance Optimization | 0/? | Not started | - |
