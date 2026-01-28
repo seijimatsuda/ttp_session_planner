@@ -1,11 +1,14 @@
 import { useState } from 'react'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
+import { toast } from 'sonner'
 import { supabase } from '../lib/supabase'
+import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { getUserFriendlyError } from '@/lib/errors'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
   const location = useLocation()
@@ -13,21 +16,26 @@ export default function LoginPage() {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-    setError(null)
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
-    setIsLoading(false)
+      setIsLoading(false)
 
-    if (error) {
-      setError(error.message)
-    } else {
-      // Redirect to intended page or dashboard
-      const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/'
-      navigate(from, { replace: true })
+      if (error) {
+        toast.error(getUserFriendlyError(error))
+      } else {
+        toast.success('Welcome back!')
+        // Redirect to intended page or dashboard
+        const from = (location.state as { from?: { pathname: string } })?.from?.pathname || '/'
+        navigate(from, { replace: true })
+      }
+    } catch (error) {
+      setIsLoading(false)
+      toast.error(getUserFriendlyError(error))
     }
   }
 
@@ -39,49 +47,29 @@ export default function LoginPage() {
         </h1>
 
         <form onSubmit={handleLogin} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Your password"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-
-          {error && (
-            <div className="bg-red-50 text-red-700 px-4 py-3 rounded-md text-sm">
-              {error}
-            </div>
-          )}
-
-          <button
-            type="submit"
+          <Input
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            required
             disabled={isLoading}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? 'Logging in...' : 'Log In'}
-          </button>
+          />
+
+          <Input
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Your password"
+            required
+            disabled={isLoading}
+          />
+
+          <Button type="submit" loading={isLoading} className="w-full">
+            Log In
+          </Button>
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-600">
