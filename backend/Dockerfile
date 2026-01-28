@@ -24,6 +24,9 @@ RUN npm install --production=false
 # Copy source code
 COPY . .
 
+# Debug: Show what file we're actually building
+RUN echo "=== DEBUG: media.ts content ===" && head -110 src/routes/media.ts && echo "=== END DEBUG ==="
+
 # Build TypeScript
 RUN npm run build
 
