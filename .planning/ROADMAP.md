@@ -281,10 +281,12 @@ Plans:
   2. Image thumbnails use optimized formats and lazy loading
   3. React Query caches data to minimize redundant API calls
   4. Drill library renders 100+ drills without lag
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 15-01: TBD
+- [ ] 15-01-PLAN.md — Configure Vite production build with vendor chunks and bundle analyzer
+- [ ] 15-02-PLAN.md — Add native image lazy loading and tune React Query cache settings
+- [ ] 15-03-PLAN.md — Implement list virtualization for drill library with TanStack Virtual
 
 ### Phase 16: Final Testing & Launch
 **Goal**: Application verified across all target platforms and deployed to production
@@ -324,5 +326,5 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 12. Dashboard | 2/2 | ✓ Complete | 2026-01-28 |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
 | 14. iOS/iPad Optimization | 0/2 | Not started | - |
-| 15. Performance Optimization | 0/? | Not started | - |
+| 15. Performance Optimization | 0/3 | Not started | - |
 | 16. Final Testing & Launch | 0/4 | Not started | - |
