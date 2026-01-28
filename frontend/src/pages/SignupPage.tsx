@@ -1,52 +1,60 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { toast } from 'sonner'
 import { supabase } from '../lib/supabase'
+import { Button } from '@/components/ui/Button'
+import { Input } from '@/components/ui/Input'
+import { getUserFriendlyError } from '@/lib/errors'
 
 export default function SignupPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
   const [message, setMessage] = useState<string | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError(null)
     setMessage(null)
 
     // Client-side validation
     if (password !== confirmPassword) {
-      setError('Passwords do not match')
+      toast.error('Passwords do not match')
       return
     }
 
     if (password.length < 6) {
-      setError('Password must be at least 6 characters')
+      toast.error('Password must be at least 6 characters')
       return
     }
 
     setIsLoading(true)
 
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: window.location.origin,
-      },
-    })
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: window.location.origin,
+        },
+      })
 
-    setIsLoading(false)
+      setIsLoading(false)
 
-    if (error) {
-      setError(error.message)
-    } else if (data.session) {
-      // Email confirmation disabled - user logged in immediately
-      navigate('/', { replace: true })
-    } else {
-      // Email confirmation enabled - user needs to check email
-      setMessage('Check your email to confirm your account!')
+      if (error) {
+        toast.error(getUserFriendlyError(error))
+      } else if (data.session) {
+        // Email confirmation disabled - user logged in immediately
+        toast.success('Account created!')
+        navigate('/', { replace: true })
+      } else {
+        // Email confirmation enabled - user needs to check email
+        setMessage('Check your email to confirm your account!')
+      }
+    } catch (error) {
+      setIsLoading(false)
+      toast.error(getUserFriendlyError(error))
     }
   }
 
@@ -58,58 +66,35 @@ export default function SignupPage() {
         </h1>
 
         <form onSubmit={handleSignup} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              required
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+          <Input
+            label="Email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="your@email.com"
+            required
+            disabled={isLoading}
+          />
 
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="At least 6 characters"
-              required
-              minLength={6}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
+          <Input
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="At least 6 characters"
+            required
+            disabled={isLoading}
+          />
 
-          <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
-              Confirm Password
-            </label>
-            <input
-              id="confirmPassword"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              placeholder="Confirm your password"
-              required
-              minLength={6}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            />
-          </div>
-
-          {error && (
-            <div className="bg-red-50 text-red-700 px-4 py-3 rounded-md text-sm">
-              {error}
-            </div>
-          )}
+          <Input
+            label="Confirm Password"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            placeholder="Confirm your password"
+            required
+            disabled={isLoading}
+          />
 
           {message && (
             <div className="bg-green-50 text-green-700 px-4 py-3 rounded-md text-sm">
@@ -117,13 +102,9 @@ export default function SignupPage() {
             </div>
           )}
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? 'Creating account...' : 'Sign Up'}
-          </button>
+          <Button type="submit" loading={isLoading} className="w-full">
+            Sign Up
+          </Button>
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-600">
