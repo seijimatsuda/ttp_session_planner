@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 15 - Performance Optimization
+**Current focus:** Phase 16 - Final Testing & Launch
 
 ## Current Position
 
