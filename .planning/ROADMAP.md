@@ -25,7 +25,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Database Schema & Services** - PostgreSQL tables, RLS, TypeScript types
 - [x] **Phase 4: Supabase Storage & Media Upload** - Upload videos/images with progress tracking
 - [x] **Phase 5: iOS Media Proxy** - Backend proxy for Range requests and iOS compatibility
-- [ ] **Phase 6: Core UI Components** - Reusable components and responsive layout
+- [x] **Phase 6: Core UI Components** - Reusable components and responsive layout
 
 ### Milestone 2: Core Features
 
@@ -139,10 +139,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Install UI libraries, create cn() utility, setup toast and error boundary
-- [ ] 06-02-PLAN.md — Create Button, Input, and Skeleton UI primitive components
-- [ ] 06-03-PLAN.md — Create AppShell responsive layout and Container components
-- [ ] 06-04-PLAN.md — Wire providers into App.tsx, create demo page, verify responsive behavior
+- [x] 06-01-PLAN.md — Install UI libraries, create cn() utility, setup toast and error boundary
+- [x] 06-02-PLAN.md — Create Button, Input, and Skeleton UI primitive components
+- [x] 06-03-PLAN.md — Create AppShell responsive layout and Container components
+- [x] 06-04-PLAN.md — Wire providers into App.tsx, create demo page, verify responsive behavior
 
 ### Phase 7: Add Drill Feature
 **Goal**: Users can create new drills with complete metadata and media
@@ -300,7 +300,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 3. Database Schema & Services | 3/3 | ✓ Complete | 2026-01-27 |
 | 4. Supabase Storage & Media Upload | 3/3 | ✓ Complete | 2026-01-27 |
 | 5. iOS Media Proxy | 2/2 | ✓ Complete | 2026-01-27 |
-| 6. Core UI Components | 0/4 | Planned | - |
+| 6. Core UI Components | 4/4 | ✓ Complete | 2026-01-27 |
 | 7. Add Drill Feature | 0/3 | Planned | - |
 | 8. Drill Library | 0/? | Not started | - |
 | 9. Drill Detail & Edit | 0/? | Not started | - |

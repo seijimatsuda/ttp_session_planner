@@ -58,11 +58,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### UI & Polish
 
-- [ ] **UI-01**: Responsive layout works on desktop, tablet, mobile
-- [ ] **UI-02**: All touch targets minimum 44px (iOS accessibility)
-- [ ] **UI-03**: Loading states with skeletons (no jarring flashes)
-- [ ] **UI-04**: Toast notifications for success/error feedback
-- [ ] **UI-05**: User-friendly error messages
+- [x] **UI-01**: Responsive layout works on desktop, tablet, mobile
+- [x] **UI-02**: All touch targets minimum 44px (iOS accessibility)
+- [x] **UI-03**: Loading states with skeletons (no jarring flashes)
+- [x] **UI-04**: Toast notifications for success/error feedback
+- [x] **UI-05**: User-friendly error messages
 - [ ] **UI-06**: Dashboard with quick actions after login
 
 ## v2 Requirements
@@ -143,11 +143,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SESS-08 | Phase 11 | Pending |
 | SESS-09 | Phase 11 | Pending |
 | SESS-10 | Phase 11 | Pending |
-| UI-01 | Phase 6 | Pending |
-| UI-02 | Phase 6 | Pending |
-| UI-03 | Phase 13 | Pending |
-| UI-04 | Phase 13 | Pending |
-| UI-05 | Phase 13 | Pending |
+| UI-01 | Phase 6 | Complete |
+| UI-02 | Phase 6 | Complete |
+| UI-03 | Phase 6 | Complete |
+| UI-04 | Phase 6 | Complete |
+| UI-05 | Phase 6 | Complete |
 | UI-06 | Phase 12 | Pending |
 
 **Coverage:**

@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 6 - Core UI Components (COMPLETE)
+**Current focus:** Phase 7 - Add Drill Feature
 
 ## Current Position
 
-Phase: 6 of 16 (Core UI Components) - COMPLETE
-Plan: 4 of 4 in current phase
-Status: Phase complete
-Last activity: 2026-01-28 — Completed 06-04-PLAN.md (App Integration)
+Phase: 7 of 16 (Add Drill Feature)
+Plan: 0 of 3 in current phase
+Status: Ready to start
+Last activity: 2026-01-27 — Completed Phase 6 (Core UI Components)
 
 Progress: [████░░░░░░] 46% (6/16 phases completed, 22/48 plans completed)
 
