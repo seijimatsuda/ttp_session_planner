@@ -284,8 +284,8 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 15-01-PLAN.md — Configure Vite production build with vendor chunks and bundle analyzer
-- [ ] 15-02-PLAN.md — Add native image lazy loading and tune React Query cache settings
+- [x] 15-01-PLAN.md — Configure Vite production build with vendor chunks and bundle analyzer
+- [x] 15-02-PLAN.md — Add native image lazy loading and tune React Query cache settings
 - [ ] 15-03-PLAN.md — Implement list virtualization for drill library with TanStack Virtual
 
 ### Phase 16: Final Testing & Launch
@@ -326,5 +326,5 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 12. Dashboard | 2/2 | ✓ Complete | 2026-01-28 |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
 | 14. iOS/iPad Optimization | 2/2 | ✓ Complete | 2026-01-28 |
-| 15. Performance Optimization | 0/3 | Not started | - |
+| 15. Performance Optimization | 2/3 | In progress | - |
 | 16. Final Testing & Launch | 0/4 | Not started | - |
