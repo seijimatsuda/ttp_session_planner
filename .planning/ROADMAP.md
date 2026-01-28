@@ -265,10 +265,11 @@ Plans:
   2. Drag-and-drop feels responsive on iPad with no lag
   3. Videos play and scrub correctly on iOS Safari (verified on real device)
   4. Video elements include playsInline and webkit-playsinline attributes
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 14-01: TBD
+- [ ] 14-01-PLAN.md — Fix touch targets on TagInput, MediaUpload, and auth page links
+- [ ] 14-02-PLAN.md — Update MediaUpload video preview to use proxy URL, iOS device verification
 
 ### Phase 15: Performance Optimization
 **Goal**: Application loads quickly and responds instantly on all target devices
@@ -318,7 +319,6 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 11. Save & Load Sessions | 0/3 | Not started | - |
 | 12. Dashboard | 0/2 | Not started | - |
 | 13. Error Handling & Loading States | 3/3 | ✓ Complete | 2026-01-28 |
-| 13. Error Handling & Loading States | 0/3 | Not started | - |
-| 14. iOS/iPad Optimization | 0/? | Not started | - |
+| 14. iOS/iPad Optimization | 0/2 | Not started | - |
 | 15. Performance Optimization | 0/? | Not started | - |
 | 16. Final Testing & Launch | 0/? | Not started | - |
