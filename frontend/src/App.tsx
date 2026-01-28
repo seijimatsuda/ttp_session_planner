@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage'
 import { AddDrillPage } from './pages/AddDrillPage'
 import { DrillLibraryPage } from './pages/DrillLibraryPage'
 import { DrillDetailPage } from './pages/DrillDetailPage'
+import { EditDrillPage } from './pages/EditDrillPage'
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route path="/" element={<DashboardPage />} />
 
-          {/* Drill routes */}
+          {/* Drill routes - ordered from most specific to least specific */}
           <Route path="/drills/new" element={<AddDrillPage />} />
+          <Route path="/drills/:id/edit" element={<EditDrillPage />} />
           <Route path="/drills/:id" element={<DrillDetailPage />} />
           <Route path="/drills" element={<DrillLibraryPage />} />
 
