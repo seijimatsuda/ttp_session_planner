@@ -78,7 +78,7 @@ export function SaveSessionDialog({
         // Edit mode: Update existing session
         const updated = await updateMutation.mutateAsync({
           id: existingSession.id,
-          updates: { name: data.name, grid_data: gridData as Json },
+          updates: { name: data.name, grid_data: gridData as unknown as Json },
         })
         toast.success('Session updated!')
         onSuccess?.(updated.id)
@@ -86,7 +86,7 @@ export function SaveSessionDialog({
         // Create mode: Create new session
         const created = await createMutation.mutateAsync({
           name: data.name,
-          grid_data: gridData as Json,
+          grid_data: gridData as unknown as Json,
           user_id: user.id,
           creator_email: user.email!,
         })
