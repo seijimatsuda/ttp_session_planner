@@ -39,9 +39,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **DRILL-04**: User can view drill library in responsive grid
 - [x] **DRILL-05**: User can search drills by name
 - [x] **DRILL-06**: User can filter drills by category
-- [ ] **DRILL-07**: User can view full drill details with media playback
-- [ ] **DRILL-08**: User can edit existing drill (all fields)
-- [ ] **DRILL-09**: User can delete drill (with confirmation)
+- [x] **DRILL-07**: User can view full drill details with media playback
+- [x] **DRILL-08**: User can edit existing drill (all fields)
+- [x] **DRILL-09**: User can delete drill (with confirmation)
 
 ### Sessions
 
@@ -130,9 +130,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DRILL-04 | Phase 8 | Complete |
 | DRILL-05 | Phase 8 | Complete |
 | DRILL-06 | Phase 8 | Complete |
-| DRILL-07 | Phase 9 | Pending |
-| DRILL-08 | Phase 9 | Pending |
-| DRILL-09 | Phase 9 | Pending |
+| DRILL-07 | Phase 9 | Complete |
+| DRILL-08 | Phase 9 | Complete |
+| DRILL-09 | Phase 9 | Complete |
 | SESS-01 | Phase 10 | Pending |
 | SESS-02 | Phase 10 | Pending |
 | SESS-03 | Phase 10 | Pending |

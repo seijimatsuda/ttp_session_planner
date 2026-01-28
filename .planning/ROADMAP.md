@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 7: Add Drill Feature** - Create new drills with metadata and media
 - [x] **Phase 8: Drill Library** - Grid view with search and category filtering
-- [ ] **Phase 9: Drill Detail & Edit** - View full drill details, edit, delete
+- [x] **Phase 9: Drill Detail & Edit** - View full drill details, edit, delete
 - [ ] **Phase 10: Session Planner Grid** - 4x3 drag-and-drop grid for session planning
 - [ ] **Phase 11: Save & Load Sessions** - Persist and retrieve session configurations
 - [ ] **Phase 12: Dashboard** - Landing page with quick actions after login
@@ -187,9 +187,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — Detail page with media playback and skeleton loading states
-- [ ] 09-02-PLAN.md — Make DrillForm reusable for edit mode, create EditDrillPage
-- [ ] 09-03-PLAN.md — Delete functionality with accessible confirmation dialog
+- [x] 09-01-PLAN.md — Detail page with media playback and skeleton loading states
+- [x] 09-02-PLAN.md — Make DrillForm reusable for edit mode, create EditDrillPage
+- [x] 09-03-PLAN.md — Delete functionality with accessible confirmation dialog
 
 ### Phase 10: Session Planner Grid
 **Goal**: Users can arrange drills in 4x3 grid via drag-and-drop or click
@@ -308,7 +308,7 @@ Phases execute in numeric order: 1 → 2 → 3 → ... → 16
 | 6. Core UI Components | 4/4 | ✓ Complete | 2026-01-27 |
 | 7. Add Drill Feature | 3/3 | ✓ Complete | 2026-01-28 |
 | 8. Drill Library | 2/2 | ✓ Complete | 2026-01-28 |
-| 9. Drill Detail & Edit | 0/3 | Not started | - |
+| 9. Drill Detail & Edit | 3/3 | ✓ Complete | 2026-01-28 |
 | 10. Session Planner Grid | 0/3 | Not started | - |
 | 11. Save & Load Sessions | 0/? | Not started | - |
 | 12. Dashboard | 0/? | Not started | - |
