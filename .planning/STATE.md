@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-22)
 
 **Core value:** Coaches can quickly build and save training session plans by dragging drills into a visual grid, accessible from any device including iPads on the field.
-**Current focus:** Phase 14 - iOS/iPad Optimization
+**Current focus:** Phase 11 - Save & Load Sessions
 
 ## Current Position
 
-Phase: 14 of 16 (iOS/iPad Optimization)
-Plan: 0 of ? in current phase
-Status: Ready to start
-Last activity: 2026-01-28 — Completed Phase 13 (Error Handling & Loading States)
+Phase: 11 of 16 (Save & Load Sessions)
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-01-27 — Completed 11-03-PLAN.md (Save Session Dialog)
 
-Progress: [████████░░] 81% (13/16 phases completed, 39/48 plans completed)
+Progress: [████████░░] 83% (13/16 phases completed, 40/48 plans completed)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 39
+- Total plans completed: 40
 - Average duration: 3.6min
-- Total execution time: 2.4 hours
+- Total execution time: 2.5 hours
 
 **By Phase:**
 
@@ -37,13 +37,13 @@ Progress: [████████░░] 81% (13/16 phases completed, 39/48 pl
 | 08-drill-library | 2 | 3.8min | 1.9min |
 | 09-drill-detail-edit | 2 | 7.7min | 3.9min |
 | 10-session-planner-grid | 3 | 12min | 4min |
-| 11-save-load-sessions | 3 | 5min | 1.7min |
+| 11-save-load-sessions | 3 | 12min | 4min |
 | 12-dashboard | 2 | 4min | 2min |
 | 13-error-handling-loading-states | 3 | 5min | 1.7min |
 
 **Recent Trend:**
-- Last 5 plans: 13-01 (0.7min), 13-02 (3.5min), 13-03 (1.2min)
-- Trend: Phase 13 complete - consistent error handling and loading states across app
+- Last 5 plans: 13-02 (3.5min), 13-03 (1.2min), 11-03 (7min)
+- Trend: Phase 11 complete - all save/load session components ready
 
 *Updated after each plan completion*
 
@@ -160,6 +160,11 @@ Recent decisions affecting current work:
 - ConfirmDialog component pattern: isOpen/onClose/onConfirm props with loading state support (11-01)
 - confirmVariant prop supports both danger and primary styles for flexibility (11-01)
 - Cancel button calls onClose for consistent close behavior (11-01)
+- grid_data passed as prop rather than form field since it comes from grid state (11-03)
+- Form resets on dialog open/close using useEffect hook (11-03)
+- Type casting GridData to Json via 'as unknown as Json' for database compatibility (11-03)
+- Session form validation schema separates name validation from grid_data (11-03)
+- SaveSessionDialog supports both create and edit modes via existingSession prop (11-03)
 
 ### Pending Todos
 
@@ -171,8 +176,8 @@ None currently.
 
 ## Session Continuity
 
-Last session: 2026-01-28
-Stopped at: Completed Phase 13 (Error Handling & Loading States)
+Last session: 2026-01-27
+Stopped at: Completed 11-03-PLAN.md (Save Session Dialog)
 Resume file: None
 
 ## Production URLs
