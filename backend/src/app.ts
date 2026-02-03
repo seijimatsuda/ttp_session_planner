@@ -89,63 +89,6 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
   }
 })
 
-// Debug endpoint to test storage access - REMOVE AFTER DEBUGGING
-app.get('/api/debug/storage', async (req: Request, res: Response) => {
-  try {
-    // List buckets to verify storage access
-    const { data: buckets, error: bucketsError } = await supabaseAdmin.storage.listBuckets()
-
-    if (bucketsError) {
-      res.json({
-        status: 'error',
-        stage: 'listBuckets',
-        error: bucketsError
-      })
-      return
-    }
-
-    // Try to list files in drill-media bucket (including inside user folders)
-    const { data: folders, error: foldersError } = await supabaseAdmin.storage
-      .from('drill-media')
-      .list('', { limit: 5 })
-
-    // List files inside the first folder if it exists
-    let filesInFolder: string[] = []
-    if (folders && folders.length > 0 && folders[0].name) {
-      const { data: innerFiles } = await supabaseAdmin.storage
-        .from('drill-media')
-        .list(folders[0].name, { limit: 5 })
-      filesInFolder = innerFiles?.map(f => `${folders[0].name}/${f.name}`) || []
-    }
-
-    const files = folders
-    const filesError = foldersError
-
-    if (filesError) {
-      res.json({
-        status: 'error',
-        stage: 'listFiles',
-        buckets: buckets?.map(b => b.name),
-        error: filesError
-      })
-      return
-    }
-
-    res.json({
-      status: 'ok',
-      buckets: buckets?.map(b => b.name),
-      topLevel: files?.slice(0, 5).map(f => f.name),
-      filesInFirstFolder: filesInFolder,
-      message: 'Storage access working'
-    })
-  } catch (err) {
-    res.status(500).json({
-      status: 'exception',
-      message: err instanceof Error ? err.message : 'Unknown error'
-    })
-  }
-})
-
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack)
