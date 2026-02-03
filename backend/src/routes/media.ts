@@ -69,11 +69,22 @@ function isValidRange(
  */
 mediaRouter.get('/:bucket/*path', async (req: Request, res: Response) => {
   try {
+    // Debug logging - REMOVE AFTER DEBUGGING
+    console.log('Media route hit:', {
+      originalUrl: req.originalUrl,
+      params: req.params,
+      bucket: req.params.bucket,
+      path: req.params.path
+    })
+
     // Extract and normalize params - Express types can be string | string[]
     const bucketParam = req.params.bucket
     const pathParam = req.params.path
     const bucket = Array.isArray(bucketParam) ? bucketParam[0] : bucketParam
     const path = Array.isArray(pathParam) ? pathParam[0] : pathParam
+
+    // Debug logging
+    console.log('Parsed params:', { bucket, path })
 
     if (!bucket || !path) {
       res.status(400).json({ error: 'Missing bucket or path' })
@@ -87,7 +98,15 @@ mediaRouter.get('/:bucket/*path', async (req: Request, res: Response) => {
 
     if (signedUrlError || !signedData?.signedUrl) {
       console.error('Signed URL error:', signedUrlError)
-      res.status(404).json({ error: 'File not found' })
+      // Return actual error for debugging - REMOVE AFTER DEBUGGING
+      res.status(404).json({
+        error: 'File not found',
+        debug: {
+          bucket,
+          path,
+          signedUrlError: signedUrlError?.message || signedUrlError
+        }
+      })
       return
     }
 
