@@ -70,10 +70,10 @@ export function AppShell({
       <aside
         className={cn(
           "fixed inset-y-0 left-0 z-50 w-64 transform bg-white transition-transform duration-300 ease-in-out dark:bg-gray-800",
-          // Mobile: slide in/out
+          // Mobile: slide in/out based on state
           sidebarOpen ? "translate-x-0" : "-translate-x-full",
-          // Desktop: always visible
-          "md:translate-x-0"
+          // Desktop: ALWAYS visible (use !important to ensure override)
+          "md:!translate-x-0"
         )}
       >
         {/* Mobile close button */}
