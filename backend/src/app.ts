@@ -89,6 +89,50 @@ app.get('/api/test-db', async (req: Request, res: Response) => {
   }
 })
 
+// Debug endpoint to test storage access - REMOVE AFTER DEBUGGING
+app.get('/api/debug/storage', async (req: Request, res: Response) => {
+  try {
+    // List buckets to verify storage access
+    const { data: buckets, error: bucketsError } = await supabaseAdmin.storage.listBuckets()
+
+    if (bucketsError) {
+      res.json({
+        status: 'error',
+        stage: 'listBuckets',
+        error: bucketsError
+      })
+      return
+    }
+
+    // Try to list files in drill-media bucket
+    const { data: files, error: filesError } = await supabaseAdmin.storage
+      .from('drill-media')
+      .list('', { limit: 5 })
+
+    if (filesError) {
+      res.json({
+        status: 'error',
+        stage: 'listFiles',
+        buckets: buckets?.map(b => b.name),
+        error: filesError
+      })
+      return
+    }
+
+    res.json({
+      status: 'ok',
+      buckets: buckets?.map(b => b.name),
+      sampleFiles: files?.slice(0, 5).map(f => f.name),
+      message: 'Storage access working'
+    })
+  } catch (err) {
+    res.status(500).json({
+      status: 'exception',
+      message: err instanceof Error ? err.message : 'Unknown error'
+    })
+  }
+})
+
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack)
