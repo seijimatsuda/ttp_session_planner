@@ -77,11 +77,12 @@ mediaRouter.get('/:bucket/*path', async (req: Request, res: Response) => {
       path: req.params.path
     })
 
-    // Extract and normalize params - Express types can be string | string[]
+    // Extract and normalize params - Express 5 wildcards return arrays
     const bucketParam = req.params.bucket
     const pathParam = req.params.path
     const bucket = Array.isArray(bucketParam) ? bucketParam[0] : bucketParam
-    const path = Array.isArray(pathParam) ? pathParam[0] : pathParam
+    // Express 5 *path wildcard returns array of path segments - join them
+    const path = Array.isArray(pathParam) ? pathParam.join('/') : pathParam
 
     // Debug logging
     console.log('Parsed params:', { bucket, path })
