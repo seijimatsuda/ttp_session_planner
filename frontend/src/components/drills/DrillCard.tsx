@@ -24,7 +24,7 @@ export function DrillCard({ drill }: DrillCardProps) {
         <div className="aspect-video bg-gray-100 flex items-center justify-center">
           {drill.video_file_path ? (
             <img
-              src={getProxyMediaUrl('drills', drill.video_file_path)}
+              src={getProxyMediaUrl('drill-media', drill.video_file_path)}
               alt=""
               loading="lazy"
               width="320"

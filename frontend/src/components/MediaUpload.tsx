@@ -209,7 +209,7 @@ export function MediaUpload({
           )}
           {uploadedFilePath && mediaType === 'video' && (
             <video
-              src={getProxyMediaUrl('drills', uploadedFilePath)}
+              src={getProxyMediaUrl('drill-media', uploadedFilePath)}
               controls
               playsInline
               preload="metadata"

@@ -32,7 +32,7 @@ export function DrillDetail({ drill, onEdit, onDelete, isDeleting }: DrillDetail
       {drill.video_file_path && (
         <div className="bg-black rounded-lg overflow-hidden">
           <video
-            src={getProxyMediaUrl('drills', drill.video_file_path)}
+            src={getProxyMediaUrl('drill-media', drill.video_file_path)}
             controls
             playsInline
             preload="metadata"
