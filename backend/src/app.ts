@@ -104,10 +104,22 @@ app.get('/api/debug/storage', async (req: Request, res: Response) => {
       return
     }
 
-    // Try to list files in drill-media bucket
-    const { data: files, error: filesError } = await supabaseAdmin.storage
+    // Try to list files in drill-media bucket (including inside user folders)
+    const { data: folders, error: foldersError } = await supabaseAdmin.storage
       .from('drill-media')
       .list('', { limit: 5 })
+
+    // List files inside the first folder if it exists
+    let filesInFolder: string[] = []
+    if (folders && folders.length > 0 && folders[0].name) {
+      const { data: innerFiles } = await supabaseAdmin.storage
+        .from('drill-media')
+        .list(folders[0].name, { limit: 5 })
+      filesInFolder = innerFiles?.map(f => `${folders[0].name}/${f.name}`) || []
+    }
+
+    const files = folders
+    const filesError = foldersError
 
     if (filesError) {
       res.json({
@@ -122,7 +134,8 @@ app.get('/api/debug/storage', async (req: Request, res: Response) => {
     res.json({
       status: 'ok',
       buckets: buckets?.map(b => b.name),
-      sampleFiles: files?.slice(0, 5).map(f => f.name),
+      topLevel: files?.slice(0, 5).map(f => f.name),
+      filesInFirstFolder: filesInFolder,
       message: 'Storage access working'
     })
   } catch (err) {
